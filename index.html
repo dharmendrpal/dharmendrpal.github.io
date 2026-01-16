@@ -1,76 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dharmendra Pal | Official Website</title>
+<title>धर्मेंद्र पाल | आधिकारिक वेबसाइट</title>
 
 <style>
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f2f5f7;
-    color:#333;
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f2f5f7;
+  color:#333;
 }
 
 /* Header */
 .header{
-    background:linear-gradient(135deg,#0f4c5c,#1b9aaa);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
+  background:linear-gradient(135deg,#0f4c5c,#1b9aaa);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
 }
 
 .profile-pic{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    border:4px solid white;
-    margin-bottom:15px;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:5px solid white;
+  box-shadow:0 6px 15px rgba(0,0,0,0.4);
+  margin-bottom:15px;
 }
 
 .header h1{
-    margin:10px 0 5px;
-    font-size:34px;
+  margin:10px 0 5px;
+  font-size:34px;
 }
 
 .header p{
-    font-size:18px;
-    opacity:0.9;
+  font-size:18px;
+  opacity:0.9;
 }
 
 /* Sections */
 .section{
-    max-width:900px;
-    margin:30px auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  max-width:900px;
+  margin:30px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .section h2{
-    color:#0f4c5c;
-    border-bottom:3px solid #1b9aaa;
-    padding-bottom:8px;
+  color:#0f4c5c;
+  border-bottom:3px solid #1b9aaa;
+  padding-bottom:8px;
 }
 
-/* Bio list */
-.bio-item{
-    background:#f0f7fa;
-    padding:12px;
-    border-radius:6px;
-    margin:10px 0;
-    font-size:16px;
+/* Info boxes */
+.info-item{
+  background:#f0f7fa;
+  padding:12px;
+  border-radius:6px;
+  margin:10px 0;
+  font-size:16px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  z-index:999;
 }
 
 /* Footer */
 .footer{
-    background:#0f4c5c;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:40px;
+  background:#0f4c5c;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:40px;
 }
 </style>
 </head>
@@ -79,46 +95,58 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-    <!-- Photo upload karne ke baad yahan file ka naam dal dena -->
-    <!-- <img src="photo.jpg" class="profile-pic"> -->
-
-    <h1>Dharmendra Pal</h1>
-    <p>Personal • Official • Profile Website</p>
+  <img src="photo.jpg" class="profile-pic" alt="Dharmendra Pal">
+  <h1>धर्मेंद्र पाल</h1>
+  <p>व्यक्तिगत • आधिकारिक • प्रोफ़ाइल वेबसाइट</p>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
-    <h2>About Me</h2>
-    <p>
-        Welcome to my official personal website.  
-        This website contains my bio data, address details and contact information.
-    </p>
+  <h2>मेरे बारे में</h2>
+  <p>
+    मेरी आधिकारिक वेबसाइट में आपका स्वागत है।  
+    यहाँ मेरी व्यक्तिगत जानकारी, बायो-डाटा, पता और संपर्क विवरण दिए गए हैं।
+  </p>
 </div>
 
 <!-- BIO DATA -->
 <div class="section">
-    <h2>Bio Data</h2>
+  <h2>बायो-डाटा</h2>
 
-    <div class="bio-item"><b>Name:</b> Dharmendra Pal</div>
-    <div class="bio-item"><b>Village:</b> Kuwakhera</div>
-    <div class="bio-item"><b>Post:</b> Garrehi</div>
-    <div class="bio-item"><b>District:</b> Jalaun</div>
-    <div class="bio-item"><b>State:</b> Uttar Pradesh</div>
-    <div class="bio-item"><b>Pin Code:</b> 285203</div>
+  <div class="info-item"><b>नाम:</b> धर्मेंद्र पाल</div>
+  <div class="info-item"><b>ग्राम:</b> कुवाखेड़ा</div>
+  <div class="info-item"><b>पोस्ट:</b> गर्रेही</div>
+  <div class="info-item"><b>जनपद:</b> जालौन</div>
+  <div class="info-item"><b>राज्य:</b> उत्तर प्रदेश</div>
+  <div class="info-item"><b>पिन कोड:</b> 285203</div>
 </div>
 
 <!-- CONTACT -->
 <div class="section">
-    <h2>Contact Details</h2>
+  <h2>संपर्क विवरण</h2>
 
-    <div class="bio-item"><b>Mobile:</b> 9651719981</div>
-    <div class="bio-item"><b>Email:</b> dharmendra199635@gmail.com</div>
+  <div class="info-item">
+    <b>मोबाइल:</b>
+    <a href="tel:9651719981">9651719981</a>
+  </div>
+
+  <div class="info-item">
+    <b>ईमेल:</b>
+    <a href="mailto:dharmendra199635@gmail.com">
+      dharmendra199635@gmail.com
+    </a>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2026 Dharmendra Pal | All Rights Reserved
+  © 2026 धर्मेंद्र पाल | सर्वाधिकार सुरक्षित
 </div>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/919651719981" target="_blank">
+  💬 WhatsApp
+</a>
 
 </body>
 </html>
