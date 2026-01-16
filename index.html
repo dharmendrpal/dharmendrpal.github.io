@@ -8,23 +8,24 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:#f4f6f9;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #74ebd5, #9face6);
 }
 
 /* HEADER */
 .header{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background: linear-gradient(135deg,#ff512f,#dd2476);
   color:white;
-  padding:40px 20px;
   text-align:center;
+  padding:40px 20px;
 }
 
 .header img{
-  width:160px;
-  height:160px;
+  width:150px;
+  height:150px;
   border-radius:50%;
-  border:5px solid white;
+  border:6px solid white;
+  background:white;
 }
 
 .header h1{
@@ -33,26 +34,25 @@ body{
 
 .header p{
   font-size:18px;
-  opacity:0.9;
 }
 
 /* SECTION */
 .section{
+  background:white;
   max-width:900px;
   margin:30px auto;
-  background:white;
   padding:30px;
-  border-radius:10px;
-  box-shadow:0 0 15px rgba(0,0,0,0.1);
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .section h2{
-  color:#2c5364;
-  border-bottom:3px solid #2c5364;
-  padding-bottom:8px;
+  color:#dd2476;
+  border-left:6px solid #ff512f;
+  padding-left:10px;
 }
 
-/* INFO GRID */
+/* INFO BOX */
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -60,18 +60,19 @@ body{
 }
 
 .info div{
-  background:#f0f3f7;
-  padding:12px;
-  border-radius:6px;
+  background:#f7f7ff;
+  padding:15px;
+  border-radius:8px;
+  border-left:5px solid #9face6;
+  font-weight:bold;
 }
 
 /* FOOTER */
 .footer{
-  background:#2c5364;
+  background:#333;
   color:white;
   text-align:center;
   padding:15px;
-  margin-top:40px;
 }
 
 /* MOBILE */
@@ -89,29 +90,28 @@ body{
 <div class="header">
   <img src="photo.jpg" alt="Dharmendra Pal">
   <h1>Dharmendra Pal</h1>
-  <p>Personal • Official • Profile Website</p>
+  <p>Official Personal Website</p>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
   <h2>About Me</h2>
   <p>
-    Welcome to my official website.  
-    This website contains my personal bio data and address details.
+    Welcome to my colourful and official personal website.  
+    This page contains my bio data and address details.
   </p>
 </div>
 
 <!-- BIO DATA -->
 <div class="section">
   <h2>Bio Data</h2>
-
   <div class="info">
-    <div><b>Name:</b> Dharmendra Pal</div>
-    <div><b>State:</b> Uttar Pradesh</div>
-    <div><b>Village:</b> Kuwakhera</div>
-    <div><b>Post:</b> Garrehi</div>
-    <div><b>District:</b> Jalaun</div>
-    <div><b>Pin Code:</b> 285203</div>
+    <div>Name: Dharmendra Pal</div>
+    <div>State: Uttar Pradesh</div>
+    <div>Village: Kuwakhera</div>
+    <div>Post: Garrehi</div>
+    <div>District: Jalaun</div>
+    <div>Pin Code: 285203</div>
   </div>
 </div>
 
@@ -128,7 +128,7 @@ body{
 
 <!-- FOOTER -->
 <div class="footer">
-  © 2026 Dharmendra Pal | All Rights Reserved
+  © 2026 Dharmendra Pal | Official Website
 </div>
 
 </body>
