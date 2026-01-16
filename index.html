@@ -2,84 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dharmendra Pal | Official Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharmendra Pal | Official Website</title>
 
 <style>
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #74ebd5, #9face6);
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f5f7;
+    color:#333;
 }
 
-/* HEADER */
+/* Header */
 .header{
-  background: linear-gradient(135deg,#ff512f,#dd2476);
-  color:white;
-  text-align:center;
-  padding:40px 20px;
+    background:linear-gradient(135deg,#0f4c5c,#1b9aaa);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
 }
 
-.header img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  border:6px solid white;
-  background:white;
+.profile-pic{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:15px;
 }
 
 .header h1{
-  margin:15px 0 5px;
+    margin:10px 0 5px;
+    font-size:34px;
 }
 
 .header p{
-  font-size:18px;
+    font-size:18px;
+    opacity:0.9;
 }
 
-/* SECTION */
+/* Sections */
 .section{
-  background:white;
-  max-width:900px;
-  margin:30px auto;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .section h2{
-  color:#dd2476;
-  border-left:6px solid #ff512f;
-  padding-left:10px;
+    color:#0f4c5c;
+    border-bottom:3px solid #1b9aaa;
+    padding-bottom:8px;
 }
 
-/* INFO BOX */
-.info{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+/* Bio list */
+.bio-item{
+    background:#f0f7fa;
+    padding:12px;
+    border-radius:6px;
+    margin:10px 0;
+    font-size:16px;
 }
 
-.info div{
-  background:#f7f7ff;
-  padding:15px;
-  border-radius:8px;
-  border-left:5px solid #9face6;
-  font-weight:bold;
-}
-
-/* FOOTER */
+/* Footer */
 .footer{
-  background:#333;
-  color:white;
-  text-align:center;
-  padding:15px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .info{
-    grid-template-columns:1fr;
-  }
+    background:#0f4c5c;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -88,47 +79,45 @@ body{
 
 <!-- HEADER -->
 <div class="header">
-  <img src="photo.jpg" alt="Dharmendra Pal">
-  <h1>Dharmendra Pal</h1>
-  <p>Official Personal Website</p>
+    <!-- Photo upload karne ke baad yahan file ka naam dal dena -->
+    <!-- <img src="photo.jpg" class="profile-pic"> -->
+
+    <h1>Dharmendra Pal</h1>
+    <p>Personal • Official • Profile Website</p>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
-  <h2>About Me</h2>
-  <p>
-    Welcome to my colourful and official personal website.  
-    This page contains my bio data and address details.
-  </p>
+    <h2>About Me</h2>
+    <p>
+        Welcome to my official personal website.  
+        This website contains my bio data, address details and contact information.
+    </p>
 </div>
 
 <!-- BIO DATA -->
 <div class="section">
-  <h2>Bio Data</h2>
-  <div class="info">
-    <div>Name: Dharmendra Pal</div>
-    <div>State: Uttar Pradesh</div>
-    <div>Village: Kuwakhera</div>
-    <div>Post: Garrehi</div>
-    <div>District: Jalaun</div>
-    <div>Pin Code: 285203</div>
-  </div>
+    <h2>Bio Data</h2>
+
+    <div class="bio-item"><b>Name:</b> Dharmendra Pal</div>
+    <div class="bio-item"><b>Village:</b> Kuwakhera</div>
+    <div class="bio-item"><b>Post:</b> Garrehi</div>
+    <div class="bio-item"><b>District:</b> Jalaun</div>
+    <div class="bio-item"><b>State:</b> Uttar Pradesh</div>
+    <div class="bio-item"><b>Pin Code:</b> 285203</div>
 </div>
 
-<!-- ADDRESS -->
+<!-- CONTACT -->
 <div class="section">
-  <h2>Address</h2>
-  <p>
-    Village: Kuwakhera<br>
-    Post: Garrehi<br>
-    District: Jalaun<br>
-    Uttar Pradesh – 285203
-  </p>
+    <h2>Contact Details</h2>
+
+    <div class="bio-item"><b>Mobile:</b> 9651719981</div>
+    <div class="bio-item"><b>Email:</b> dharmendra199635@gmail.com</div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  © 2026 Dharmendra Pal | Official Website
+    © 2026 Dharmendra Pal | All Rights Reserved
 </div>
 
 </body>
