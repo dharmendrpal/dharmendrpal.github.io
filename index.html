@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dharmendra Pal | Professional Medical Profile</title>
+<title>Dharmendra Pal | Ultimate Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,93 +14,88 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#f2f5f9;
   color:#333;
-  line-height:1.6;
 }
 body.dark{background:#020617;color:#e5e7eb}
 
-#progressBar{
-  position:fixed;top:0;left:0;height:4px;
-  background:#00ffcc;width:0%;z-index:9999;
-}
+/* Progress */
+#progressBar{position:fixed;top:0;left:0;height:4px;background:#00ffcc;width:0;z-index:9999}
 
-/* NAV */
-nav{
+/* Menu */
+.menu{
   position:sticky;top:0;z-index:998;
   background:#0f4c75;
-  display:flex;gap:18px;
-  justify-content:center;
+  display:flex;justify-content:center;gap:20px;
   padding:10px;
 }
-nav a{color:#fff;font-weight:600}
+.menu a,.menu span{color:#fff;font-weight:600;cursor:pointer}
+.dropdown{position:relative}
+.dropbox{
+  display:none;position:absolute;top:28px;
+  background:#fff;min-width:160px;
+  border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.2)
+}
+.dropbox a{display:block;padding:10px;color:#333}
+.dropdown:hover .dropbox{display:block}
 
-/* HEADER */
+/* Header */
 .header{
   background:linear-gradient(135deg,#0f4c75,#3282b8);
   color:#fff;text-align:center;
-  padding:55px 20px 65px;
+  padding:50px 20px 70px;
 }
 .profile-pic{
   width:130px;height:130px;border-radius:50%;
   border:4px solid #fff;object-fit:cover;
 }
-#typing{font-weight:600;margin-top:10px;opacity:.95}
-
-.social{margin-top:18px;display:flex;gap:14px;justify-content:center}
+#typing{margin-top:8px;font-weight:600}
+.social{margin-top:15px;display:flex;gap:14px;justify-content:center}
 .social a{
   width:38px;height:38px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;
+  display:flex;align-items:center;justify-content:center;color:#fff
 }
-.fb{background:#1877f2}
-.ig{background:#e1306c}
-.wa{background:#25d366}
+.fb{background:#1877f2}.ig{background:#e1306c}.wa{background:#25d366}
 
-.container{max-width:900px;margin:-35px auto 40px;padding:0 15px}
+/* Layout */
+.container{max-width:900px;margin:-40px auto 30px;padding:0 15px}
 .card{
-  background:#fff;padding:24px;border-radius:14px;
-  margin-bottom:26px;
-  box-shadow:0 8px 22px rgba(0,0,0,.1);
+  background:#fff;padding:20px;border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,.1)
 }
 body.dark .card{background:#020617}
+h2{color:#0f4c75}
 
-h2{margin-top:0;color:#0f4c75}
-body.dark h2{color:#93c5fd}
-
-/* CTA */
-.cta{
-  background:#0f4c75;
-  color:#fff;
-  padding:14px;
-  text-align:center;
-  border-radius:10px;
-  font-weight:700;
+/* ToDo */
+#todoInput{padding:8px;width:70%}
+#todoList{list-style:none;padding-left:0}
+#todoList li{
+  background:#f2f5f9;
+  padding:8px;margin:6px 0;border-radius:6px;
+  display:flex;justify-content:space-between
 }
+#todoList li.done{text-decoration:line-through;opacity:.6}
 
-/* FLOATING */
+/* Buttons */
 #darkToggle,#langBtn{
   position:fixed;right:20px;
   padding:8px 14px;border:none;
-  border-radius:20px;
-  cursor:pointer;z-index:999;
+  border-radius:20px;cursor:pointer;z-index:999
 }
 #darkToggle{bottom:20px}
 #langBtn{top:70px}
-
-.footer{
-  background:#0f4c75;color:#fff;
-  text-align:center;padding:18px;
-}
 
 /* AI */
 #aiBox{
   position:fixed;bottom:20px;left:20px;
   width:220px;background:#fff;
-  border-radius:10px;
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.3)
 }
 #aiHeader{background:#0f4c75;color:#fff;padding:10px}
 #aiBody{padding:10px}
 #aiBody button{width:100%;margin:4px 0}
+
+/* Footer */
+.footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
 </style>
 </head>
 
@@ -115,7 +110,6 @@ body.dark h2{color:#93c5fd}
 <img src="photo.jpg" class="profile-pic">
 <h1>Dharmendra Pal</h1>
 <p id="typing"></p>
-
 <div class="social">
 <a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
 <a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -123,68 +117,73 @@ body.dark h2{color:#93c5fd}
 </div>
 </div>
 
-<nav>
+<nav class="menu">
 <a href="#about">About</a>
 <a href="#bio">Bio</a>
-<a href="#trust">Why Trust</a>
+<div class="dropdown">
+<span>Services ▾</span>
+<div class="dropbox">
+<a href="#">Liver Care</a>
+<a href="#">Diabetes Care</a>
+<a href="#">Immunity</a>
+</div>
+</div>
+<a href="#todo">To-Do</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
 <div class="card" id="about">
-<h2 data-en="About Me" data-hi="मेरे बारे में">About Me</h2>
-<p data-en="Professional Medical Representative focused on ethical promotion and long-term doctor relationships."
-   data-hi="एक प्रोफेशनल मेडिकल रिप्रेजेंटेटिव, जो ईमानदार प्रमोशन और लंबे समय के संबंधों पर काम करता है।">
-Professional Medical Representative focused on ethical promotion and long-term doctor relationships.
-</p>
+<h2>About Me</h2>
+<p>Professional Medical Representative with ethical approach.</p>
 </div>
 
 <div class="card" id="bio">
-<h2 data-en="Bio Data" data-hi="व्यक्तिगत विवरण">Bio Data</h2>
-<p><b>Name:</b> Dharmendra Pal</p>
-<p><b>Village:</b> Kuwakhera</p>
-<p><b>District:</b> Jalaun, Uttar Pradesh</p>
-<p><b>Mobile:</b> 9651719981</p>
+<h2>Bio Data</h2>
+<p>Name: Dharmendra Pal</p>
+<p>Village: Kuwakhera</p>
+<p>District: Jalaun, UP</p>
+<p>Mobile: 9651719981</p>
 </div>
 
-<div class="card" id="trust">
-<h2>Why Doctors Trust Me</h2>
-<ul>
-<li>Clear product understanding</li>
-<li>Ethical & transparent communication</li>
-<li>Regular follow-up & support</li>
-<li>Local area availability</li>
-</ul>
+<div class="card">
+<h2>PDF Preview</h2>
+<iframe src="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/preview"
+width="100%" height="420" style="border:none"></iframe>
 </div>
 
-<div class="card cta" id="contact">
-📞 Call or WhatsApp now for professional discussion  
-<br>
-<a href="https://wa.me/919651719981" style="color:#00ffcc">WhatsApp: 9651719981</a>
+<div class="card" id="todo">
+<h2>My To-Do List</h2>
+<input id="todoInput" placeholder="Write task">
+<button onclick="addTodo()">Add</button>
+<ul id="todoList"></ul>
+</div>
+
+<div class="card" id="contact">
+<h2>Contact</h2>
+<a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">📍 View Location</a>
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 Dharmendra Pal | Professional Medical Profile
-</div>
+<div class="footer">© 2026 Dharmendra Pal</div>
 
 <div id="aiBox">
 <div id="aiHeader">🤖 Help</div>
 <div id="aiBody">
-<button onclick="reply('contact')">Contact</button>
-<button onclick="reply('location')">Location</button>
+<button onclick="aiReply('contact')">Contact</button>
+<button onclick="aiReply('location')">Location</button>
 <div id="aiReply"></div>
 </div>
 </div>
 
 <script>
 /* typing */
-let t="Medical Representative • Ethical Promotion • Professional Presence";
+let t="Medical Representative • Professional Website";
 let i=0;function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}type();
 
-/* scroll bar */
+/* scroll */
 window.addEventListener("scroll",()=>{
 let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 progressBar.style.width=(scrollY/h)*100+"%";
@@ -196,25 +195,22 @@ document.body.classList.toggle("dark");
 darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
 };
 
-/* language */
-let lang="en";
-langBtn.onclick=()=>{
-document.querySelectorAll("[data-en]").forEach(e=>{
-e.innerText=lang==="en"?e.dataset.hi:e.dataset.en;
-});
-lang=lang==="en"?"hi":"en";
-langBtn.innerText=lang==="en"?"हिंदी":"English";
-};
+/* language (simple demo) */
+langBtn.onclick=()=>alert("Hindi/English switch ready");
 
-/* AI */
-function reply(t){
-aiReply.innerText=
-t==="contact"?"📞 9651719981":
-"📍 Jalaun, UP";
+/* todo */
+function addTodo(){
+let v=todoInput.value.trim(); if(!v)return;
+let li=document.createElement("li");
+li.innerHTML=`<span onclick="this.parentElement.classList.toggle('done')">${v}</span>
+<button onclick="this.parentElement.remove()">❌</button>`;
+todoList.appendChild(li); todoInput.value="";
 }
 
-/* welcome */
-setTimeout(()=>alert("🙏 Welcome to Dharmendra Pal Professional Website"),800);
+/* AI */
+function aiReply(t){
+aiReply.innerText=t==="contact"?"📞 9651719981":"📍 Jalaun, UP";
+}
 </script>
 
 </body>
