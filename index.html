@@ -13,13 +13,10 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#3
 .header{background:linear-gradient(135deg,#0f4c75,#3282b8);color:#fff;text-align:center;padding:45px 20px}
 .profile-pic{width:120px;height:120px;border-radius:50%;border:4px solid #fff;object-fit:cover}
 .menu{position:sticky;top:0;background:#0f4c75;display:flex;justify-content:center;gap:20px;padding:10px;flex-wrap:wrap}
-.menu a,.menu span{color:#fff;font-weight:600;cursor:pointer}
-.dropdown{position:relative}
-.dropbox{display:none;background:#fff;min-width:170px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
-.dropbox a{display:block;padding:10px;color:#333}
-.dropbox.show{display:block}
+.menu a{color:#fff;font-weight:600}
 .container{max-width:1100px;margin:20px auto;padding:0 15px}
 .card{background:#fff;padding:20px;border-radius:12px;margin-bottom:25px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+h2{color:#0f4c75;margin-top:0}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
 .product{border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
 .product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
@@ -37,6 +34,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#3
 </div>
 
 <nav class="menu">
+<a href="#bio">Bio Data</a>
 <a href="#liver">Liver</a>
 <a href="#diabetes">Diabetes</a>
 <a href="#kidney">Kidney</a>
@@ -47,105 +45,96 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#3
 
 <div class="container">
 
-<!-- LIVER -->
+<!-- BIO DATA -->
+<div class="card" id="bio">
+<h2>Bio Data</h2>
+<p><b>Name:</b> Dharmendra Pal</p>
+<p><b>Village:</b> Kuwakhera</p>
+<p><b>Post:</b> Garrehi</p>
+<p><b>District:</b> Jalaun</p>
+<p><b>State:</b> Uttar Pradesh</p>
+<p><b>Pin Code:</b> 285203</p>
+<p><b>Mobile:</b> 9651719981</p>
+</div>
+
+<!-- LIVER (8) -->
 <div class="card" id="liver">
-<h2>Liver Care (8 Products)</h2>
+<h2>Liver Care Products</h2>
 <div class="products">
-<script>
-const liver=["Amlcure-DS","Amlcure Forte","BGR-34","Yakrit Plihantak","Hepacure","Livomyn","Livomyn DS","Yakrit Sudhar"];
-document.write(liver.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Liver support & detox</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/Amlcure-ds.jpg"><h3>Amlcure-DS</h3><button onclick="order('Amlcure-DS')">WhatsApp</button></div>
+<div class="product"><img src="images/Amlcure-forte.jpg"><h3>Amlcure Forte</h3><button onclick="order('Amlcure Forte')">WhatsApp</button></div>
+<div class="product"><img src="images/Yakrit-plihantak.jpg"><h3>Yakrit Plihantak</h3><button onclick="order('Yakrit Plihantak')">WhatsApp</button></div>
+<div class="product"><img src="images/Livomyn.jpg"><h3>Livomyn</h3><button onclick="order('Livomyn')">WhatsApp</button></div>
+<div class="product"><img src="images/Livomyn-ds.jpg"><h3>Livomyn DS</h3><button onclick="order('Livomyn DS')">WhatsApp</button></div>
+<div class="product"><img src="images/Hepacure.jpg"><h3>Hepacure</h3><button onclick="order('Hepacure')">WhatsApp</button></div>
+<div class="product"><img src="images/Yakrit-sudhar.jpg"><h3>Yakrit Sudhar</h3><button onclick="order('Yakrit Sudhar')">WhatsApp</button></div>
+<div class="product"><img src="images/Liver-care-plus.jpg"><h3>Liver Care Plus</h3><button onclick="order('Liver Care Plus')">WhatsApp</button></div>
 </div>
 </div>
 
-<!-- DIABETES -->
+<!-- DIABETES (6) -->
 <div class="card" id="diabetes">
-<h2>Diabetes Care (6 Products)</h2>
+<h2>Diabetes Care Products</h2>
 <div class="products">
-<script>
-const diabetes=["BGR-34","Diabo Care","Sugar Free Care","Gluco Control","Dia Health","Dia Plus"];
-document.write(diabetes.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Blood sugar management</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/BGR34.jpg"><h3>BGR-34</h3><button onclick="order('BGR-34')">WhatsApp</button></div>
+<div class="product"><img src="images/Diabo-care.jpg"><h3>Diabo Care</h3><button onclick="order('Diabo Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Dia-plus.jpg"><h3>Dia Plus</h3><button onclick="order('Dia Plus')">WhatsApp</button></div>
+<div class="product"><img src="images/Gluco-care.jpg"><h3>Gluco Care</h3><button onclick="order('Gluco Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Sugar-control.jpg"><h3>Sugar Control</h3><button onclick="order('Sugar Control')">WhatsApp</button></div>
+<div class="product"><img src="images/Dia-health.jpg"><h3>Dia Health</h3><button onclick="order('Dia Health')">WhatsApp</button></div>
 </div>
 </div>
 
-<!-- KIDNEY -->
+<!-- KIDNEY (5) -->
 <div class="card" id="kidney">
-<h2>Kidney Care (5 Products)</h2>
+<h2>Kidney Care Products</h2>
 <div class="products">
-<script>
-const kidney=["Neeri KFT","Neeri Syrup","Renalka","Uricare","Kidney Care Plus"];
-document.write(kidney.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Kidney & urinary support</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/Neerikft.jpg"><h3>Neeri KFT</h3><button onclick="order('Neeri KFT')">WhatsApp</button></div>
+<div class="product"><img src="images/Neeri.jpg"><h3>Neeri Syrup</h3><button onclick="order('Neeri Syrup')">WhatsApp</button></div>
+<div class="product"><img src="images/Renalka.jpg"><h3>Renalka</h3><button onclick="order('Renalka')">WhatsApp</button></div>
+<div class="product"><img src="images/Uricare.jpg"><h3>Uricare</h3><button onclick="order('Uricare')">WhatsApp</button></div>
+<div class="product"><img src="images/Kidney-plus.jpg"><h3>Kidney Plus</h3><button onclick="order('Kidney Plus')">WhatsApp</button></div>
 </div>
 </div>
 
-<!-- GYNAE -->
+<!-- GYNAE (6) -->
 <div class="card" id="gynae">
-<h2>Gynae Care (6 Products)</h2>
+<h2>Gynae Care Products</h2>
 <div class="products">
-<script>
-const gynae=["Stree Care","Menstronorm","Femiplex","PCOS Care","Utrofit","Garbhpal"];
-document.write(gynae.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Women health support</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/Menstronorm.jpg"><h3>Menstronorm</h3><button onclick="order('Menstronorm')">WhatsApp</button></div>
+<div class="product"><img src="images/Femiplex.jpg"><h3>Femiplex</h3><button onclick="order('Femiplex')">WhatsApp</button></div>
+<div class="product"><img src="images/PCOS-care.jpg"><h3>PCOS Care</h3><button onclick="order('PCOS Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Garbhpal.jpg"><h3>Garbhpal</h3><button onclick="order('Garbhpal')">WhatsApp</button></div>
+<div class="product"><img src="images/Utrofit.jpg"><h3>Utrofit</h3><button onclick="order('Utrofit')">WhatsApp</button></div>
+<div class="product"><img src="images/Stree-care.jpg"><h3>Stree Care</h3><button onclick="order('Stree Care')">WhatsApp</button></div>
 </div>
 </div>
 
-<!-- ORTHO -->
+<!-- ORTHO (6) -->
 <div class="card" id="ortho">
-<h2>Ortho Care (6 Products)</h2>
+<h2>Ortho Care Products</h2>
 <div class="products">
-<script>
-const ortho=["Pain Relief Oil","Ortho Plus","Joint Care","Bone Strength","Flexi Care","Rheuma Care"];
-document.write(ortho.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Joint & pain management</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/Joint-care.jpg"><h3>Joint Care</h3><button onclick="order('Joint Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Ortho-plus.jpg"><h3>Ortho Plus</h3><button onclick="order('Ortho Plus')">WhatsApp</button></div>
+<div class="product"><img src="images/Pain-relief.jpg"><h3>Pain Relief Oil</h3><button onclick="order('Pain Relief Oil')">WhatsApp</button></div>
+<div class="product"><img src="images/Rheuma-care.jpg"><h3>Rheuma Care</h3><button onclick="order('Rheuma Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Bone-strength.jpg"><h3>Bone Strength</h3><button onclick="order('Bone Strength')">WhatsApp</button></div>
+<div class="product"><img src="images/Flexi-care.jpg"><h3>Flexi Care</h3><button onclick="order('Flexi Care')">WhatsApp</button></div>
 </div>
 </div>
 
-<!-- GENERAL -->
+<!-- GENERAL (8) -->
 <div class="card" id="general">
-<h2>General Wellness (8 Products)</h2>
+<h2>General Wellness Products</h2>
 <div class="products">
-<script>
-const general=["Immunity Booster","Digestive Care","Stress Relief","Energy Plus","Vital Health","Ayur Tonic","Health Plus","Daily Wellness"];
-document.write(general.map(p=>`
-<div class='product'>
-<img src='https://via.placeholder.com/300x200?text=${p}'>
-<h3>${p}</h3>
-<p>Daily wellness support</p>
-<button onclick="order('${p}')">WhatsApp Enquiry</button>
-</div>`).join(""));
-</script>
+<div class="product"><img src="images/Immunity-booster.jpg"><h3>Immunity Booster</h3><button onclick="order('Immunity Booster')">WhatsApp</button></div>
+<div class="product"><img src="images/Digestive-care.jpg"><h3>Digestive Care</h3><button onclick="order('Digestive Care')">WhatsApp</button></div>
+<div class="product"><img src="images/Energy-plus.jpg"><h3>Energy Plus</h3><button onclick="order('Energy Plus')">WhatsApp</button></div>
+<div class="product"><img src="images/Stress-relief.jpg"><h3>Stress Relief</h3><button onclick="order('Stress Relief')">WhatsApp</button></div>
+<div class="product"><img src="images/Vital-health.jpg"><h3>Vital Health</h3><button onclick="order('Vital Health')">WhatsApp</button></div>
+<div class="product"><img src="images/Ayur-tonic.jpg"><h3>Ayur Tonic</h3><button onclick="order('Ayur Tonic')">WhatsApp</button></div>
+<div class="product"><img src="images/Health-plus.jpg"><h3>Health Plus</h3><button onclick="order('Health Plus')">WhatsApp</button></div>
+<div class="product"><img src="images/Daily-wellness.jpg"><h3>Daily Wellness</h3><button onclick="order('Daily Wellness')">WhatsApp</button></div>
 </div>
 </div>
 
