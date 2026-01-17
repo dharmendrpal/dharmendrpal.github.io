@@ -1,8 +1,13 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Dharmendra Pal | Official Profile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
 *{box-sizing:border-box}
 
 body{
@@ -13,27 +18,173 @@ body{
   animation:fadeIn 1.2s ease;
 }
 
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes slideDown{from{transform:translateY(-40px);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
 
-/* HEADER */
 .header{
   background:linear-gradient(135deg,#0f4c75,#3282b8);
   color:white;
   text-align:center;
   padding:50px 20px 70px;
-  animation:slideDown 1.2s ease;
 }
-.profile-pic{
-  width:130px;height:130px;border-radius:50%;border:4px solid #fff;
-  object-fit:cover;background:#ddd;transition:transform .4s;
-}
-.profile-pic:hover{transform:scale(1.08)}
-.header h1{margin:15px 0 5px;font-size:28px}
-.header p{margin:0;opacity:.9}
 
-/* SOCIAL */
-.social{margin-top:18px;display:flex;justify-content:center;gap:14px}
+.profile-pic{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+  transition:.4s;
+}
+.profile-pic:hover{transform:scale(1.1)}
+
+.social{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
 .social a{
-  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:17px;
+  text-decoration:none;
+}
+.fb{background:#1877f2;}
+.ig{background:#e1306c;}
+.wa{background:#25d366;}
+
+.container{
+  max-width:900px;
+  margin:-40px auto 30px;
+  padding:0 15px;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:22px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.card h2{
+  border-bottom:2px solid #3282b8;
+  color:#0f4c75;
+}
+
+.bottom-photo{
+  text-align:center;
+  margin:20px auto;
+}
+.bottom-photo img{
+  max-width:160px;
+  border-radius:8px;
+}
+
+.search-box{
+  text-align:center;
+  margin:25px 0;
+}
+.search-box input{
+  padding:10px;
+  width:220px;
+}
+.search-box button{
+  padding:10px 15px;
+  background:#0f4c75;
+  color:white;
+  border:none;
+}
+
+.footer{
+  text-align:center;
+  padding:15px;
+  background:#0f4c75;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="photo.jpg" class="profile-pic">
+  <h1>Dharmendra Pal</h1>
+  <p>
+    <a href="https://drive.google.com/drive/folders/18L1koE1ivO4QOOtMm1bOS1-c4L_MTDR7"
+       target="_blank" style="color:#00ffcc;text-decoration:none;">
+      Personal
+    </a> • Official • Profile
+  </p>
+
+  <div class="social">
+    <a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>About Me</h2>
+<p>Welcome to my official profile website.</p>
+</div>
+
+<div class="card">
+<h2>Bio Data</h2>
+<p><b>Village:</b> Kuwakhera<br>
+<b>Post:</b> Garrehi<br>
+<b>District:</b> Jalaun<br>
+<b>State:</b> Uttar Pradesh<br>
+<b>Pin:</b> 285203</p>
+</div>
+
+<div class="card">
+<h2>Contact</h2>
+<p>
+📞 <a href="tel:9651719981">9651719981</a><br>
+✉️ <a href="mailto:dharmendra199635@gmail.com">dharmendra199635@gmail.com</a>
+</p>
+</div>
+
+<div class="search-box">
+<form action="https://www.google.com/search" method="get" target="_blank">
+<input type="text" name="q" placeholder="Search on website">
+<input type="hidden" name="sitesearch" value="dharmendrpal.github.io">
+<button>Search</button>
+</form>
+</div>
+
+<div class="bottom-photo">
+<img src="myphoto.jpg">
+<p>
+<a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">
+🏠 हमारा घर का नक्शा देखें
+</a>
+</p>
+
+<p>
+<a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view"
+target="_blank">
+📄 Download PDF
+</a>
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Dharmendra Pal | All Rights Reserved
+</div>
+
+</body>
+</html>
