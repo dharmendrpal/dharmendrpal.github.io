@@ -2,217 +2,160 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dharmendra Pal | Professional Website</title>
+<title>Dharmendra Pal | Aimil Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f2f5f9;
-  color:#333;
-}
-body.dark{background:#020617;color:#e5e7eb}
-
-/* Progress bar */
-#progressBar{position:fixed;top:0;left:0;height:4px;background:#00ffcc;width:0;z-index:9999}
-
-/* Header */
-.header{
-  background:linear-gradient(135deg,#0f4c75,#3282b8);
-  color:#fff;text-align:center;
-  padding:50px 20px 70px;
-}
-.profile-pic{
-  width:130px;height:130px;border-radius:50%;
-  border:4px solid #fff;object-fit:cover;
-}
-#typing{margin-top:8px;font-weight:600}
-.social{margin-top:15px;display:flex;gap:14px;justify-content:center}
-.social a{
-  width:38px;height:38px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;color:#fff
-}
-.fb{background:#1877f2}.ig{background:#e1306c}.wa{background:#25d366}
-
-/* Menu */
-.menu{
-  position:sticky;top:0;z-index:998;
-  background:#0f4c75;
-  display:flex;justify-content:center;
-  gap:20px;padding:10px;flex-wrap:wrap
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#333}
+.header{background:linear-gradient(135deg,#0f4c75,#3282b8);color:#fff;text-align:center;padding:45px 20px}
+.profile-pic{width:120px;height:120px;border-radius:50%;border:4px solid #fff;object-fit:cover}
+.menu{position:sticky;top:0;background:#0f4c75;display:flex;justify-content:center;gap:20px;padding:10px;flex-wrap:wrap}
 .menu a,.menu span{color:#fff;font-weight:600;cursor:pointer}
 .dropdown{position:relative}
-.dropbox{
-  display:none;background:#fff;
-  min-width:160px;border-radius:8px;
-  box-shadow:0 6px 18px rgba(0,0,0,.2)
-}
+.dropbox{display:none;background:#fff;min-width:170px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
 .dropbox a{display:block;padding:10px;color:#333}
 .dropbox.show{display:block}
-
-/* Layout */
-.container{max-width:900px;margin:-40px auto 30px;padding:0 15px}
-.card{
-  background:#fff;padding:20px;border-radius:12px;
-  margin-bottom:20px;
-  box-shadow:0 6px 20px rgba(0,0,0,.1);
-  transition:.3s
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.15)}
-body.dark .card{background:#020617}
-h2{color:#0f4c75}
-
-/* Products */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-}
-.product{
-  border:1px solid #ddd;
-  padding:15px;border-radius:10px;
-  text-align:center;
-}
-.product img{
-  width:100%;height:140px;
-  object-fit:cover;border-radius:8px
-}
-.product button{
-  margin-top:8px;
-  padding:8px 12px;
-  border:none;border-radius:6px;
-  background:#0f4c75;color:#fff;
-  cursor:pointer
-}
-
-/* Floating buttons */
-#darkToggle{
-  position:fixed;right:20px;bottom:20px;
-  padding:8px 14px;border:none;
-  border-radius:20px;cursor:pointer;z-index:999
-}
-
-/* Footer */
+.container{max-width:1100px;margin:20px auto;padding:0 15px}
+.card{background:#fff;padding:20px;border-radius:12px;margin-bottom:25px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.product{border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
+.product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.product button{margin-top:8px;padding:8px 12px;border:none;border-radius:6px;background:#0f4c75;color:#fff;cursor:pointer}
 .footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
-
-/* Mobile */
-@media(max-width:768px){
-  iframe{height:280px!important}
-}
 </style>
 </head>
 
 <body>
 
-<div id="progressBar"></div>
-
-<button id="darkToggle">🌙</button>
-
 <div class="header">
 <img src="photo.jpg" class="profile-pic">
 <h1>Dharmendra Pal</h1>
-<p id="typing"></p>
-<div class="social">
-<a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
-<a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
-</div>
+<p>Medical Representative • Aimil Products</p>
 </div>
 
 <nav class="menu">
-<a href="#about">About</a>
-<a href="#bio">Bio</a>
-<div class="dropdown">
-<span onclick="this.nextElementSibling.classList.toggle('show')">Services ▾</span>
-<div class="dropbox">
-<a href="#liver">Liver Care</a>
-<a href="#diabetes">Diabetes Care</a>
-<a href="#immunity">Immunity</a>
-</div>
-</div>
-<a href="#contact">Contact</a>
+<a href="#liver">Liver</a>
+<a href="#diabetes">Diabetes</a>
+<a href="#kidney">Kidney</a>
+<a href="#gynae">Gynae</a>
+<a href="#ortho">Ortho</a>
+<a href="#general">General</a>
 </nav>
 
 <div class="container">
 
-<div class="card" id="about">
-<h2>About Me</h2>
-<p>Professional Medical Representative with ethical approach.</p>
-</div>
-
-<div class="card" id="bio">
-<h2>Bio Data</h2>
-<p>Name: Dharmendra Pal</p>
-<p>Village: Kuwakhera</p>
-<p>District: Jalaun, UP</p>
-<p>Mobile: 9651719981</p>
-</div>
-
-<!-- LIVER PRODUCTS -->
+<!-- LIVER -->
 <div class="card" id="liver">
-<h2>Liver Care Products</h2>
+<h2>Liver Care (8 Products)</h2>
 <div class="products">
-
-<div class="product">
-<img src="https://via.placeholder.com/300x200?text=Amlcure+DS">
-<h3>Amlcure-DS</h3>
-<p>Supports fatty liver & liver detox</p>
-<button onclick="order('Amlcure-DS')">Enquiry on WhatsApp</button>
-</div>
-
+<script>
+const liver=["Amlcure-DS","Amlcure Forte","BGR-34","Yakrit Plihantak","Hepacure","Livomyn","Livomyn DS","Yakrit Sudhar"];
+document.write(liver.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Liver support & detox</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
 </div>
 </div>
 
 <!-- DIABETES -->
 <div class="card" id="diabetes">
-<h2>Diabetes Care</h2>
-<p>Products will be added soon.</p>
+<h2>Diabetes Care (6 Products)</h2>
+<div class="products">
+<script>
+const diabetes=["BGR-34","Diabo Care","Sugar Free Care","Gluco Control","Dia Health","Dia Plus"];
+document.write(diabetes.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Blood sugar management</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
+</div>
 </div>
 
-<!-- IMMUNITY -->
-<div class="card" id="immunity">
-<h2>Immunity Care</h2>
-<p>Products will be added soon.</p>
+<!-- KIDNEY -->
+<div class="card" id="kidney">
+<h2>Kidney Care (5 Products)</h2>
+<div class="products">
+<script>
+const kidney=["Neeri KFT","Neeri Syrup","Renalka","Uricare","Kidney Care Plus"];
+document.write(kidney.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Kidney & urinary support</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
+</div>
 </div>
 
-<div class="card" id="contact">
-<h2>Contact</h2>
-<a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">📍 View Location</a>
+<!-- GYNAE -->
+<div class="card" id="gynae">
+<h2>Gynae Care (6 Products)</h2>
+<div class="products">
+<script>
+const gynae=["Stree Care","Menstronorm","Femiplex","PCOS Care","Utrofit","Garbhpal"];
+document.write(gynae.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Women health support</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
+</div>
+</div>
+
+<!-- ORTHO -->
+<div class="card" id="ortho">
+<h2>Ortho Care (6 Products)</h2>
+<div class="products">
+<script>
+const ortho=["Pain Relief Oil","Ortho Plus","Joint Care","Bone Strength","Flexi Care","Rheuma Care"];
+document.write(ortho.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Joint & pain management</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
+</div>
+</div>
+
+<!-- GENERAL -->
+<div class="card" id="general">
+<h2>General Wellness (8 Products)</h2>
+<div class="products">
+<script>
+const general=["Immunity Booster","Digestive Care","Stress Relief","Energy Plus","Vital Health","Ayur Tonic","Health Plus","Daily Wellness"];
+document.write(general.map(p=>`
+<div class='product'>
+<img src='https://via.placeholder.com/300x200?text=${p}'>
+<h3>${p}</h3>
+<p>Daily wellness support</p>
+<button onclick="order('${p}')">WhatsApp Enquiry</button>
+</div>`).join(""));
+</script>
+</div>
 </div>
 
 </div>
 
-<div class="footer">© 2026 Dharmendra Pal</div>
+<div class="footer">© 2026 Dharmendra Pal | Aimil Products</div>
 
 <script>
-/* typing */
-let t="Medical Representative • Product Promotion • Professional Website";
-let i=0;
-function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}
-type();
-
-/* scroll */
-window.addEventListener("scroll",()=>{
-let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-progressBar.style.width=(scrollY/h)*100+"%";
-});
-
-/* dark */
-darkToggle.onclick=()=>{
-document.body.classList.toggle("dark");
-darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
-};
-
-/* whatsapp order */
 function order(p){
-window.open(
-"https://wa.me/919651719981?text=I%20want%20details%20about%20"+p
-);
+window.open("https://wa.me/919651719981?text=I%20want%20details%20about%20"+p);
 }
 </script>
 
