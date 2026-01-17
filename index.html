@@ -9,156 +9,116 @@
 
 <style>
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:#f2f5f9;
   color:#333;
-  animation:fadeIn 1.2s ease;
 }
+body.dark{background:#020617;color:#e5e7eb}
 
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
+#progressBar{
+  position:fixed;top:0;left:0;height:4px;
+  background:#00ffcc;width:0%;z-index:9999;
 }
 
 .header{
   background:linear-gradient(135deg,#0f4c75,#3282b8);
-  color:white;
-  text-align:center;
+  color:#fff;text-align:center;
   padding:50px 20px 70px;
 }
-
 .profile-pic{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  border:4px solid #fff;
-  object-fit:cover;
-  transition:.4s;
+  width:130px;height:130px;border-radius:50%;
+  border:4px solid #fff;object-fit:cover;
 }
-.profile-pic:hover{transform:scale(1.1)}
-
-.social{
-  margin-top:18px;
-  display:flex;
-  justify-content:center;
-  gap:14px;
-}
+.social{margin-top:15px;display:flex;gap:14px;justify-content:center}
 .social a{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:17px;
-  text-decoration:none;
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;text-decoration:none;
 }
-.fb{background:#1877f2;}
-.ig{background:#e1306c;}
-.wa{background:#25d366;}
+.fb{background:#1877f2}
+.ig{background:#e1306c}
+.wa{background:#25d366}
 
-.container{
-  max-width:900px;
-  margin:-40px auto 30px;
-  padding:0 15px;
-}
+#typing{font-weight:600;margin-top:8px}
 
+.container{max-width:900px;margin:-40px auto 30px;padding:0 15px}
 .card{
-  background:white;
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:22px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  background:#fff;padding:20px;border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
 }
-
-.card h2{
-  border-bottom:2px solid #3282b8;
-  color:#0f4c75;
-}
-
-.bottom-photo{
-  text-align:center;
-  margin:20px auto;
-}
-.bottom-photo img{
-  max-width:160px;
-  border-radius:8px;
-}
-
-.search-box{
-  text-align:center;
-  margin:25px 0;
-}
-.search-box input{
-  padding:10px;
-  width:220px;
-}
-.search-box button{
-  padding:10px 15px;
-  background:#0f4c75;
-  color:white;
-  border:none;
-}
+body.dark .card{background:#020617}
 
 .footer{
-  text-align:center;
-  padding:15px;
-  background:#0f4c75;
-  color:white;
+  background:#0f4c75;color:#fff;
+  text-align:center;padding:15px;
 }
+
+#darkToggle,#langBtn{
+  position:fixed;right:20px;border:none;
+  padding:8px 14px;border-radius:20px;
+  cursor:pointer;z-index:999;
+}
+#darkToggle{bottom:20px}
+#langBtn{top:70px}
+
+.search-box{text-align:center;margin:20px}
+.search-box input{padding:8px;width:200px}
+
+.bottom-photo{text-align:center}
+.bottom-photo img{max-width:160px;border-radius:8px}
+
+#aiBox{
+  position:fixed;bottom:20px;left:20px;
+  width:220px;background:#fff;border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+#aiHeader{background:#0f4c75;color:#fff;padding:10px}
+#aiBody{padding:10px}
+#aiBody button{width:100%;margin:4px 0}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <img src="photo.jpg" class="profile-pic">
-  <h1>Dharmendra Pal</h1>
-  <p>
-    <a href="https://drive.google.com/drive/folders/18L1koE1ivO4QOOtMm1bOS1-c4L_MTDR7"
-       target="_blank" style="color:#00ffcc;text-decoration:none;">
-      Personal
-    </a> • Official • Profile
-  </p>
+<div id="progressBar"></div>
 
-  <div class="social">
-    <a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
+<button id="darkToggle">🌙</button>
+<button id="langBtn">हिंदी</button>
+
+<div class="header">
+<img src="photo.jpg" class="profile-pic">
+<h1>Dharmendra Pal</h1>
+<p id="typing"></p>
+
+<div class="social">
+<a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
 </div>
 
 <div class="container">
 
 <div class="card">
-<h2>About Me</h2>
-<p>Welcome to my official profile website.</p>
-</div>
-
-<div class="card">
-<h2>Bio Data</h2>
-<p><b>Village:</b> Kuwakhera<br>
-<b>Post:</b> Garrehi<br>
-<b>District:</b> Jalaun<br>
-<b>State:</b> Uttar Pradesh<br>
-<b>Pin:</b> 285203</p>
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<p>
-📞 <a href="tel:9651719981">9651719981</a><br>
-✉️ <a href="mailto:dharmendra199635@gmail.com">dharmendra199635@gmail.com</a>
+<h2 data-en="About Me" data-hi="मेरे बारे में">About Me</h2>
+<p data-en="Welcome to my official profile website."
+   data-hi="मेरी आधिकारिक प्रोफाइल वेबसाइट में आपका स्वागत है।">
+Welcome to my official profile website.
 </p>
 </div>
 
+<div class="card">
+<h2>PDF Preview</h2>
+<iframe src="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/preview"
+width="100%" height="420" style="border:none"></iframe>
+</div>
+
 <div class="search-box">
-<form action="https://www.google.com/search" method="get" target="_blank">
-<input type="text" name="q" placeholder="Search on website">
+<form action="https://www.google.com/search" target="_blank">
+<input type="text" name="q" placeholder="Search website">
 <input type="hidden" name="sitesearch" value="dharmendrpal.github.io">
 <button>Search</button>
 </form>
@@ -166,25 +126,72 @@ body{
 
 <div class="bottom-photo">
 <img src="myphoto.jpg">
-<p>
-<a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">
-🏠 हमारा घर का नक्शा देखें
-</a>
-</p>
+<p><a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">🏠 घर का नक्शा</a></p>
+</div>
 
-<p>
-<a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view"
-target="_blank">
-📄 Download PDF
-</a>
-</p>
+<div class="card">
+<h2>Private Area</h2>
+<input type="password" id="pass">
+<button onclick="unlock()">Enter</button>
+<p id="secret" style="display:none">🔒 Private Info Visible</p>
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 Dharmendra Pal | All Rights Reserved
+<div class="footer">© 2026 Dharmendra Pal</div>
+
+<div id="aiBox">
+<div id="aiHeader">🤖 Help</div>
+<div id="aiBody">
+<button onclick="reply('contact')">Contact</button>
+<button onclick="reply('location')">Location</button>
+<div id="aiReply"></div>
 </div>
+</div>
+
+<script>
+/* typing */
+let t="Medical Representative • Official Profile";
+let i=0;function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}type();
+
+/* scroll bar */
+window.addEventListener("scroll",()=>{
+let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+progressBar.style.width=(scrollY/h)*100+"%";
+});
+
+/* dark */
+darkToggle.onclick=()=>{
+document.body.classList.toggle("dark");
+darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
+};
+
+/* language */
+let lang="en";
+langBtn.onclick=()=>{
+document.querySelectorAll("[data-en]").forEach(e=>{
+e.innerText=lang==="en"?e.dataset.hi:e.dataset.en;
+});
+lang=lang==="en"?"hi":"en";
+langBtn.innerText=lang==="en"?"हिंदी":"English";
+};
+
+/* AI */
+function reply(t){
+aiReply.innerText=
+t==="contact"?"📞 9651719981":
+"📍 Jalaun, UP";
+}
+
+/* lock */
+function unlock(){
+if(pass.value==="1234")secret.style.display="block";
+else alert("Wrong password");
+}
+
+/* welcome */
+setTimeout(()=>alert("🙏 Welcome to Dharmendra Pal Official Website"),800);
+</script>
 
 </body>
 </html>
