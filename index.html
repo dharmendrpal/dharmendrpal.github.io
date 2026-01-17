@@ -224,17 +224,26 @@ body{
   text-align: center;
   margin: 20px auto;
 }
+<style>
+.bottom-photo {
+  text-align: center;
+  margin: 15px auto;
+}
 
 .bottom-photo img {
-  max-width: 220px;   /* फोटो की maximum width */
-  width: 90%;         /* mobile में adjust */
-  height: auto;       /* photo stretch नहीं होगी */
-  border-radius: 10px;
+  max-width: 160px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
   display: block;
   margin: 0 auto;
 }
 
 .bottom-photo p {
-  margin-top: 8px;
+  margin-top: 6px;
   font-weight: 600;
+  font-size: 14px;
 }
+</style>
