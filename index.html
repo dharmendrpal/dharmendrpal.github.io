@@ -220,24 +220,21 @@ body{
   <img src="myphoto.jpg" alt="Dharmendra Pal Photo">
 </div>
 <a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view?usp=drivesdk target="_blank">
-  Download PDF
-</a><div class="bottom-photo">
-  <img src="shivam.jpg" alt="Shivam">
-  <p>Shivam</p>
-</div>.bottom-photo {
+  Download PDF.bottom-photo {
   text-align: center;
-  margin-top: 40px;
-  padding-bottom: 20px;
+  margin: 20px auto;
 }
 
 .bottom-photo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+  max-width: 220px;   /* फोटो की maximum width */
+  width: 90%;         /* mobile में adjust */
+  height: auto;       /* photo stretch नहीं होगी */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .bottom-photo p {
   margin-top: 8px;
-  font-weight: bold;
+  font-weight: 600;
 }
