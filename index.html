@@ -18,10 +18,7 @@ body{
 body.dark{background:#020617;color:#e5e7eb}
 
 /* Progress bar */
-#progressBar{
-  position:fixed;top:0;left:0;height:4px;
-  background:#00ffcc;width:0;z-index:9999;
-}
+#progressBar{position:fixed;top:0;left:0;height:4px;background:#00ffcc;width:0;z-index:9999}
 
 /* Header */
 .header{
@@ -34,18 +31,12 @@ body.dark{background:#020617;color:#e5e7eb}
   border:4px solid #fff;object-fit:cover;
 }
 #typing{margin-top:8px;font-weight:600}
-.social{
-  margin-top:15px;
-  display:flex;gap:14px;justify-content:center
-}
+.social{margin-top:15px;display:flex;gap:14px;justify-content:center}
 .social a{
   width:38px;height:38px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;text-decoration:none
+  display:flex;align-items:center;justify-content:center;color:#fff
 }
-.fb{background:#1877f2}
-.ig{background:#e1306c}
-.wa{background:#25d366}
+.fb{background:#1877f2}.ig{background:#e1306c}.wa{background:#25d366}
 
 /* Menu */
 .menu{
@@ -54,93 +45,64 @@ body.dark{background:#020617;color:#e5e7eb}
   display:flex;justify-content:center;
   gap:20px;padding:10px;flex-wrap:wrap
 }
-.menu a,.menu span{
-  color:#fff;font-weight:600;cursor:pointer
-}
+.menu a,.menu span{color:#fff;font-weight:600;cursor:pointer}
 .dropdown{position:relative}
 .dropbox{
-  display:none;
-  background:#fff;
-  min-width:160px;
-  border-radius:8px;
+  display:none;background:#fff;
+  min-width:160px;border-radius:8px;
   box-shadow:0 6px 18px rgba(0,0,0,.2)
 }
-.dropbox a{
-  display:block;padding:10px;color:#333
-}
-.dropbox a:hover{background:#f2f5f9}
+.dropbox a{display:block;padding:10px;color:#333}
 .dropbox.show{display:block}
 
 /* Layout */
-.container{
-  max-width:900px;
-  margin:-40px auto 30px;
-  padding:0 15px
-}
+.container{max-width:900px;margin:-40px auto 30px;padding:0 15px}
 .card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
+  background:#fff;padding:20px;border-radius:12px;
   margin-bottom:20px;
   box-shadow:0 6px 20px rgba(0,0,0,.1);
   transition:.3s
 }
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(0,0,0,.15)
-}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.15)}
 body.dark .card{background:#020617}
 h2{color:#0f4c75}
 
-/* ToDo */
-#todoInput{padding:8px;width:70%}
-#todoList{list-style:none;padding-left:0}
-#todoList li{
-  background:#f2f5f9;
-  padding:8px;margin:6px 0;
-  border-radius:6px;
-  display:flex;justify-content:space-between
+/* Products */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
 }
-#todoList li.done{
-  text-decoration:line-through;opacity:.6
+.product{
+  border:1px solid #ddd;
+  padding:15px;border-radius:10px;
+  text-align:center;
+}
+.product img{
+  width:100%;height:140px;
+  object-fit:cover;border-radius:8px
+}
+.product button{
+  margin-top:8px;
+  padding:8px 12px;
+  border:none;border-radius:6px;
+  background:#0f4c75;color:#fff;
+  cursor:pointer
 }
 
 /* Floating buttons */
-#darkToggle,#langBtn{
-  position:fixed;right:20px;
-  padding:8px 14px;
-  border:none;border-radius:20px;
-  cursor:pointer;z-index:999
+#darkToggle{
+  position:fixed;right:20px;bottom:20px;
+  padding:8px 14px;border:none;
+  border-radius:20px;cursor:pointer;z-index:999
 }
-#darkToggle{bottom:20px}
-#langBtn{top:90px}
-
-/* AI Box */
-#aiBox{
-  position:fixed;bottom:90px;left:20px;
-  width:200px;background:#fff;
-  border-radius:10px;
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
-  font-size:13px
-}
-#aiHeader{
-  background:#0f4c75;color:#fff;padding:10px
-}
-#aiBody{padding:10px}
-#aiBody button{width:100%;margin:4px 0}
 
 /* Footer */
-.footer{
-  background:#0f4c75;
-  color:#fff;text-align:center;
-  padding:15px
-}
+.footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
 
-/* Mobile fixes */
+/* Mobile */
 @media(max-width:768px){
   iframe{height:280px!important}
-  #langBtn{top:120px}
-  #darkToggle{bottom:80px}
 }
 </style>
 </head>
@@ -150,124 +112,20 @@ h2{color:#0f4c75}
 <div id="progressBar"></div>
 
 <button id="darkToggle">🌙</button>
-<button id="langBtn">हिंदी</button>
 
 <div class="header">
-  <img src="photo.jpg" class="profile-pic">
-  <h1>Dharmendra Pal</h1>
-  <p id="typing"></p>
-  <div class="social">
-    <a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
+<img src="photo.jpg" class="profile-pic">
+<h1>Dharmendra Pal</h1>
+<p id="typing"></p>
+<div class="social">
+<a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
 </div>
 
 <nav class="menu">
-  <a href="#about">About</a>
-  <a href="#bio">Bio</a>
-  <div class="dropdown">
-    <span onclick="this.nextElementSibling.classList.toggle('show')">Services ▾</span>
-    <div class="dropbox">
-      <a href="#services">Liver Care</a>
-      <a href="#services">Diabetes Care</a>
-      <a href="#services">Immunity</a>
-    </div>
-  </div>
-  <a href="#todo">To-Do</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="container">
-
-<div class="card" id="about">
-<h2>About Me</h2>
-<p>Professional Medical Representative with ethical and result-oriented approach.</p>
-</div>
-
-<div class="card" id="bio">
-<h2>Bio Data</h2>
-<p>Name: Dharmendra Pal</p>
-<p>Village: Kuwakhera</p>
-<p>District: Jalaun, UP</p>
-<p>Mobile: 9651719981</p>
-</div>
-
-<div class="card" id="services">
-<h2>Services</h2>
-<ul>
-<li>Liver Care</li>
-<li>Diabetes Care</li>
-<li>Immunity Solutions</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>PDF Preview</h2>
-<iframe src="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/preview"
-width="100%" height="300" style="border:none"></iframe>
-</div>
-
-<div class="card" id="todo">
-<h2>My To-Do List</h2>
-<input id="todoInput" placeholder="Write task">
-<button onclick="addTodo()">Add</button>
-<ul id="todoList"></ul>
-</div>
-
-<div class="card" id="contact">
-<h2>Contact</h2>
-<a href="https://www.google.com/maps?q=26.010816,79.745970" target="_blank">📍 View Location</a>
-</div>
-
-</div>
-
-<div class="footer">© 2026 Dharmendra Pal</div>
-
-<div id="aiBox">
-  <div id="aiHeader">🤖 Help</div>
-  <div id="aiBody">
-    <button onclick="aiReply('contact')">Contact</button>
-    <button onclick="aiReply('location')">Location</button>
-    <div id="aiReply"></div>
-  </div>
-</div>
-
-<script>
-/* typing */
-let t="Medical Representative • Professional Website";
-let i=0;
-function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}
-type();
-
-/* scroll */
-window.addEventListener("scroll",()=>{
-  let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-  progressBar.style.width=(scrollY/h)*100+"%";
-});
-
-/* dark mode */
-darkToggle.onclick=()=>{
-  document.body.classList.toggle("dark");
-  darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
-};
-
-/* todo */
-function addTodo(){
-  let v=todoInput.value.trim();
-  if(!v)return;
-  let li=document.createElement("li");
-  li.innerHTML=`<span onclick="this.parentElement.classList.toggle('done')">${v}</span>
-  <button onclick="this.parentElement.remove()">❌</button>`;
-  todoList.appendChild(li);
-  todoInput.value="";
-}
-
-/* AI */
-function aiReply(t){
-  aiReply.innerText=t==="contact"?"📞 9651719981":"📍 Jalaun, UP";
-}
-</script>
-
-</body>
-</html>
+<a href="#about">About</a>
+<a href="#bio">Bio</a>
+<div class="dropdown">
+<span onclick="this.nextElementSibling.classList.toggle('show')">Services ▾</span>
