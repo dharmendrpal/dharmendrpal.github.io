@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dharmendra Pal | Ultimate Website</title>
+<title>Dharmendra Pal | Professional Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,25 +17,11 @@ body{
 }
 body.dark{background:#020617;color:#e5e7eb}
 
-/* Progress */
-#progressBar{position:fixed;top:0;left:0;height:4px;background:#00ffcc;width:0;z-index:9999}
-
-/* Menu */
-.menu{
-  position:sticky;top:0;z-index:998;
-  background:#0f4c75;
-  display:flex;justify-content:center;gap:20px;
-  padding:10px;
+/* Progress bar */
+#progressBar{
+  position:fixed;top:0;left:0;height:4px;
+  background:#00ffcc;width:0;z-index:9999;
 }
-.menu a,.menu span{color:#fff;font-weight:600;cursor:pointer}
-.dropdown{position:relative}
-.dropbox{
-  display:none;position:absolute;top:28px;
-  background:#fff;min-width:160px;
-  border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.2)
-}
-.dropbox a{display:block;padding:10px;color:#333}
-.dropdown:hover .dropbox{display:block}
 
 /* Header */
 .header{
@@ -48,19 +34,60 @@ body.dark{background:#020617;color:#e5e7eb}
   border:4px solid #fff;object-fit:cover;
 }
 #typing{margin-top:8px;font-weight:600}
-.social{margin-top:15px;display:flex;gap:14px;justify-content:center}
+.social{
+  margin-top:15px;
+  display:flex;gap:14px;justify-content:center
+}
 .social a{
   width:38px;height:38px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;color:#fff
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;text-decoration:none
 }
-.fb{background:#1877f2}.ig{background:#e1306c}.wa{background:#25d366}
+.fb{background:#1877f2}
+.ig{background:#e1306c}
+.wa{background:#25d366}
+
+/* Menu */
+.menu{
+  position:sticky;top:0;z-index:998;
+  background:#0f4c75;
+  display:flex;justify-content:center;
+  gap:20px;padding:10px;flex-wrap:wrap
+}
+.menu a,.menu span{
+  color:#fff;font-weight:600;cursor:pointer
+}
+.dropdown{position:relative}
+.dropbox{
+  display:none;
+  background:#fff;
+  min-width:160px;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,.2)
+}
+.dropbox a{
+  display:block;padding:10px;color:#333
+}
+.dropbox a:hover{background:#f2f5f9}
+.dropbox.show{display:block}
 
 /* Layout */
-.container{max-width:900px;margin:-40px auto 30px;padding:0 15px}
+.container{
+  max-width:900px;
+  margin:-40px auto 30px;
+  padding:0 15px
+}
 .card{
-  background:#fff;padding:20px;border-radius:12px;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
   margin-bottom:20px;
-  box-shadow:0 6px 20px rgba(0,0,0,.1)
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+  transition:.3s
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,.15)
 }
 body.dark .card{background:#020617}
 h2{color:#0f4c75}
@@ -70,32 +97,51 @@ h2{color:#0f4c75}
 #todoList{list-style:none;padding-left:0}
 #todoList li{
   background:#f2f5f9;
-  padding:8px;margin:6px 0;border-radius:6px;
+  padding:8px;margin:6px 0;
+  border-radius:6px;
   display:flex;justify-content:space-between
 }
-#todoList li.done{text-decoration:line-through;opacity:.6}
+#todoList li.done{
+  text-decoration:line-through;opacity:.6
+}
 
-/* Buttons */
+/* Floating buttons */
 #darkToggle,#langBtn{
   position:fixed;right:20px;
-  padding:8px 14px;border:none;
-  border-radius:20px;cursor:pointer;z-index:999
+  padding:8px 14px;
+  border:none;border-radius:20px;
+  cursor:pointer;z-index:999
 }
 #darkToggle{bottom:20px}
-#langBtn{top:70px}
+#langBtn{top:90px}
 
-/* AI */
+/* AI Box */
 #aiBox{
-  position:fixed;bottom:20px;left:20px;
-  width:220px;background:#fff;
-  border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.3)
+  position:fixed;bottom:90px;left:20px;
+  width:200px;background:#fff;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  font-size:13px
 }
-#aiHeader{background:#0f4c75;color:#fff;padding:10px}
+#aiHeader{
+  background:#0f4c75;color:#fff;padding:10px
+}
 #aiBody{padding:10px}
 #aiBody button{width:100%;margin:4px 0}
 
 /* Footer */
-.footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
+.footer{
+  background:#0f4c75;
+  color:#fff;text-align:center;
+  padding:15px
+}
+
+/* Mobile fixes */
+@media(max-width:768px){
+  iframe{height:280px!important}
+  #langBtn{top:120px}
+  #darkToggle{bottom:80px}
+}
 </style>
 </head>
 
@@ -107,36 +153,36 @@ h2{color:#0f4c75}
 <button id="langBtn">हिंदी</button>
 
 <div class="header">
-<img src="photo.jpg" class="profile-pic">
-<h1>Dharmendra Pal</h1>
-<p id="typing"></p>
-<div class="social">
-<a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
-<a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
-</div>
+  <img src="photo.jpg" class="profile-pic">
+  <h1>Dharmendra Pal</h1>
+  <p id="typing"></p>
+  <div class="social">
+    <a class="fb" href="https://facebook.com/drxtinkupal" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a class="ig" href="https://instagram.com/drxtinkupal" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a class="wa" href="https://wa.me/919651719981" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 </div>
 
 <nav class="menu">
-<a href="#about">About</a>
-<a href="#bio">Bio</a>
-<div class="dropdown">
-<span>Services ▾</span>
-<div class="dropbox">
-<a href="#">Liver Care</a>
-<a href="#">Diabetes Care</a>
-<a href="#">Immunity</a>
-</div>
-</div>
-<a href="#todo">To-Do</a>
-<a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#bio">Bio</a>
+  <div class="dropdown">
+    <span onclick="this.nextElementSibling.classList.toggle('show')">Services ▾</span>
+    <div class="dropbox">
+      <a href="#services">Liver Care</a>
+      <a href="#services">Diabetes Care</a>
+      <a href="#services">Immunity</a>
+    </div>
+  </div>
+  <a href="#todo">To-Do</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
 <div class="card" id="about">
 <h2>About Me</h2>
-<p>Professional Medical Representative with ethical approach.</p>
+<p>Professional Medical Representative with ethical and result-oriented approach.</p>
 </div>
 
 <div class="card" id="bio">
@@ -147,10 +193,19 @@ h2{color:#0f4c75}
 <p>Mobile: 9651719981</p>
 </div>
 
+<div class="card" id="services">
+<h2>Services</h2>
+<ul>
+<li>Liver Care</li>
+<li>Diabetes Care</li>
+<li>Immunity Solutions</li>
+</ul>
+</div>
+
 <div class="card">
 <h2>PDF Preview</h2>
 <iframe src="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/preview"
-width="100%" height="420" style="border:none"></iframe>
+width="100%" height="300" style="border:none"></iframe>
 </div>
 
 <div class="card" id="todo">
@@ -170,46 +225,47 @@ width="100%" height="420" style="border:none"></iframe>
 <div class="footer">© 2026 Dharmendra Pal</div>
 
 <div id="aiBox">
-<div id="aiHeader">🤖 Help</div>
-<div id="aiBody">
-<button onclick="aiReply('contact')">Contact</button>
-<button onclick="aiReply('location')">Location</button>
-<div id="aiReply"></div>
-</div>
+  <div id="aiHeader">🤖 Help</div>
+  <div id="aiBody">
+    <button onclick="aiReply('contact')">Contact</button>
+    <button onclick="aiReply('location')">Location</button>
+    <div id="aiReply"></div>
+  </div>
 </div>
 
 <script>
 /* typing */
 let t="Medical Representative • Professional Website";
-let i=0;function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}type();
+let i=0;
+function type(){if(i<t.length){typing.innerHTML+=t[i++];setTimeout(type,60)}}
+type();
 
 /* scroll */
 window.addEventListener("scroll",()=>{
-let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-progressBar.style.width=(scrollY/h)*100+"%";
+  let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  progressBar.style.width=(scrollY/h)*100+"%";
 });
 
-/* dark */
+/* dark mode */
 darkToggle.onclick=()=>{
-document.body.classList.toggle("dark");
-darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
+  document.body.classList.toggle("dark");
+  darkToggle.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
 };
-
-/* language (simple demo) */
-langBtn.onclick=()=>alert("Hindi/English switch ready");
 
 /* todo */
 function addTodo(){
-let v=todoInput.value.trim(); if(!v)return;
-let li=document.createElement("li");
-li.innerHTML=`<span onclick="this.parentElement.classList.toggle('done')">${v}</span>
-<button onclick="this.parentElement.remove()">❌</button>`;
-todoList.appendChild(li); todoInput.value="";
+  let v=todoInput.value.trim();
+  if(!v)return;
+  let li=document.createElement("li");
+  li.innerHTML=`<span onclick="this.parentElement.classList.toggle('done')">${v}</span>
+  <button onclick="this.parentElement.remove()">❌</button>`;
+  todoList.appendChild(li);
+  todoInput.value="";
 }
 
 /* AI */
 function aiReply(t){
-aiReply.innerText=t==="contact"?"📞 9651719981":"📍 Jalaun, UP";
+  aiReply.innerText=t==="contact"?"📞 9651719981":"📍 Jalaun, UP";
 }
 </script>
 
