@@ -2,214 +2,162 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Dharmendra Pal | Aimil Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dharmendra | Medical Representative</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  background:#f4f6f8;
-}
-header{
-  background:#0b5ed7;
-  color:#fff;
-  padding:20px;
-  text-align:center;
-  position:relative;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#333}
+.header{background:linear-gradient(135deg,#0f4c75,#3282b8);color:#fff;text-align:center;padding:45px 20px}
+.profile-pic{width:120px;height:120px;border-radius:50%;border:4px solid #fff;object-fit:cover}
+.menu{position:sticky;top:0;background:#0f4c75;display:flex;justify-content:center;gap:20px;padding:10px;flex-wrap:wrap}
+.menu a{color:#fff;font-weight:600}
+.container{max-width:1100px;margin:20px auto;padding:0 15px}
+.card{background:#fff;padding:20px;border-radius:12px;margin-bottom:25px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+h2{color:#0f4c75;margin-top:0}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.product{border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
+.product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.product button{margin-top:6px;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;width:100%;font-weight:bold}
+.add{background:#ffc107;color:#000}
+.buy{background:#198754;color:#fff}
+
 #cartBox{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:#ffc107;
-  color:#000;
-  padding:6px 12px;
-  border-radius:20px;
-  font-weight:bold;
-  z-index:9999;
-  cursor:pointer;
-}
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-  padding:20px;
-}
-.card{
-  background:#fff;
-  border-radius:10px;
-  padding:15px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-}
-.card img{
-  width:100%;
-  height:150px;
-  object-fit:contain;
-}
-.card h3{
-  margin:10px 0 5px;
-}
-.card p{
-  font-size:14px;
-  color:#555;
-}
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 12px;
-  background:#198754;
-  color:#fff;
-  text-decoration:none;
-  border-radius:5px;
-}
-.card a:hover{
-  background:#157347;
-}
-.cart-btn{
-  margin-top:8px;
-  padding:8px 12px;
-  width:100%;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:bold;
-}
-.add{
-  background:#ffc107;
-}
-.buy{
-  background:#198754;
-  color:#fff;
-}
-footer{
-  background:#222;
-  color:#ccc;
-  padding:15px;
-  font-size:13px;
-  text-align:center;
+ position:fixed;
+ top:15px;
+ right:15px;
+ background:#ffc107;
+ padding:6px 12px;
+ border-radius:20px;
+ font-weight:bold;
+ z-index:9999;
+ cursor:pointer;
 }
 
-/* Call button */
-.call{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  color:#fff;
-  font-size:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
-  z-index:999;
-  background:#0b5ed7;
+#cartModal{
+ display:none;
+ position:fixed;
+ top:0;left:0;
+ width:100%;height:100%;
+ background:rgba(0,0,0,.6);
+ z-index:9999;
 }
+#cartContent{
+ background:#fff;
+ margin:15% auto;
+ padding:20px;
+ width:90%;
+ max-width:400px;
+ border-radius:10px;
+}
+
+.footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Dharmendra Kumar</h1>
-  <p>Medical Representative | Aimil Pharmaceutical</p>
-</header>
-
-<div id="cartBox">🛒 Cart (<span id="cartCount">0</span>)</div>
-
-<section class="products">
-
-  <div class="card">
-    <img src="product1.png">
-    <h3>Product Name 1</h3>
-    <p>Liver support & digestion</p>
-    <a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view" target="_blank">
-      View Visual Aid
-    </a>
-    <button class="cart-btn add" onclick="addToCart('Product Name 1')">
-      Add to Cart
-    </button>
-    <button class="cart-btn buy" onclick="buyNow('Product Name 1')">
-      Buy Now
-    </button>
-  </div>
-
-  <div class="card">
-    <img src="product2.png">
-    <h3>Product Name 2</h3>
-    <p>Joint & pain management</p>
-    <a href="PASTE_PDF_LINK_HERE" target="_blank">View Visual Aid</a>
-    <button class="cart-btn add" onclick="addToCart('Product Name 2')">
-      Add to Cart
-    </button>
-    <button class="cart-btn buy" onclick="buyNow('Product Name 2')">
-      Buy Now
-    </button>
-  </div>
-
-  <div class="card">
-    <img src="product3.png">
-    <h3>Product Name 3</h3>
-    <p>Women's health support</p>
-    <a href="PASTE_PDF_LINK_HERE" target="_blank">View Visual Aid</a>
-    <button class="cart-btn add" onclick="addToCart('Product Name 3')">
-      Add to Cart
-    </button>
-    <button class="cart-btn buy" onclick="buyNow('Product Name 3')">
-      Buy Now
-    </button>
-  </div>
-
-</section>
-
-<div style="text-align:center; padding:20px">
-  <a href="PDF_LINK" target="_blank"
-     style="padding:12px 20px;
-     background:#dc3545;
-     color:#fff;
-     text-decoration:none;
-     border-radius:6px;">
-     Download Full Product Catalogue
-  </a>
+<div class="header">
+<img src="photo.jpg" class="profile-pic">
+<h1>Dharmendra Pal</h1>
+<p>Medical Representative • Aimil Products</p>
 </div>
 
-<footer>
-  <p>
-    This website is for information purpose only.  
-    Products are to be used as prescribed by registered medical practitioners.
-  </p>
-</footer>
+<div id="cartBox" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</div>
 
-<!-- Call Button -->
-<a href="tel:+919651719981" class="call">📞</a>
+<nav class="menu">
+<a href="#bio">Bio Data</a>
+<a href="#liver">Liver</a>
+<a href="#diabetes">Diabetes</a>
+<a href="#kidney">Kidney</a>
+<a href="#gynae">Gynae</a>
+<a href="#ortho">Ortho</a>
+<a href="#general">General</a>
+</nav>
+
+<div class="container">
+
+<!-- BIO -->
+<div class="card" id="bio">
+<h2>Bio Data</h2>
+<p><b>Name:</b> Dharmendra Pal</p>
+<p><b>Village:</b> Kuwakhera</p>
+<p><b>Post:</b> Garrehi</p>
+<p><b>District:</b> Jalaun</p>
+<p><b>State:</b> Uttar Pradesh</p>
+<p><b>Pin Code:</b> 285203</p>
+<p><b>Mobile:</b> 9651719981</p>
+</div>
+
+<!-- EXAMPLE: Liver (same pattern sab me) -->
+<div class="card" id="liver">
+<h2>Liver Care Products</h2>
+<div class="products">
+<div class="product">
+<img src="images/Amlcure-ds.jpg">
+<h3>Amlcure-DS</h3>
+<button class="add" onclick="addToCart('Amlcure-DS')">Add to Cart</button>
+<button class="buy" onclick="buyNow('Amlcure-DS')">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="images/Amlcure-forte.jpg">
+<h3>Amlcure Forte</h3>
+<button class="add" onclick="addToCart('Amlcure Forte')">Add to Cart</button>
+<button class="buy" onclick="buyNow('Amlcure Forte')">Buy Now</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">© 2026 Dharmendra Pal | Aimil Products</div>
+
+<!-- CART POPUP -->
+<div id="cartModal">
+<div id="cartContent">
+<h3>Your Cart</h3>
+<ul id="cartItems"></ul>
+<button class="buy" onclick="checkout()">Checkout / Buy Now</button>
+<button class="add" onclick="closeCart()">Close</button>
+</div>
+</div>
 
 <script>
 let cart = [];
 
 function addToCart(product){
-  cart.push(product);
-  document.getElementById("cartCount").innerText = cart.length;
-  alert(product + " added to cart");
+ cart.push(product);
+ document.getElementById("cartCount").innerText = cart.length;
+ alert(product+" added to cart");
+}
+
+function openCart(){
+ let list="";
+ cart.forEach((item,i)=>{
+   list += "<li>"+(i+1)+". "+item+"</li>";
+ });
+ document.getElementById("cartItems").innerHTML=list;
+ document.getElementById("cartModal").style.display="block";
+}
+
+function closeCart(){
+ document.getElementById("cartModal").style.display="none";
 }
 
 function buyNow(product){
-  cart = [product];
-  checkout();
+ cart=[product];
+ checkout();
 }
 
 function checkout(){
-  let msg = "Hello, I want to order:\n";
-  cart.forEach((p,i)=>{
-    msg += (i+1)+". "+p+"\n";
-  });
-  window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
+ let msg="Hello Doctor, I want to order:\n";
+ cart.forEach((p,i)=>{
+   msg += (i+1)+". "+p+"\n";
+ });
+ window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
 }
 </script>
 
