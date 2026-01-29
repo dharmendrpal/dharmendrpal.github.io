@@ -313,8 +313,21 @@ h2{color:#0f4c75;margin-top:0}
 <button class="add" onclick="closeCart()">Close</button>
 </div>
 </div>
-
+<button class="buy" onclick="checkout()">Checkout / Buy Now</button>
+<button class="add" onclick="showHistory()">Order History</button>
+<button class="add" onclick="closeCart()">Close</button>
 <script>
+ <!-- HISTORY POPUP -->
+<div id="historyModal" style="display:none;
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.6);z-index:9999;">
+<div style="background:#fff;margin:15% auto;padding:20px;
+width:90%;max-width:400px;border-radius:10px;">
+<h3>Order History</h3>
+<ul id="historyItems"></ul>
+<button class="add" onclick="closeHistory()">Close</button>
+</div>
+</div>
 let cart = [];
 
 function addToCart(product){
@@ -349,6 +362,39 @@ function checkout(){
  window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
 }
 </script>
+function checkout(){
+ if(cart.length==0){
+   alert("Cart is empty");
+   return;
+ }
 
+ // save history
+ let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+ history.push([...cart]);
+ localStorage.setItem("orderHistory", JSON.stringify(history));
+
+ let msg="Hello Doctor, I want to order:\n";
+ cart.forEach((p,i)=>{
+   msg += (i+1)+". "+p+"\n";
+ });
+ cart=[]; 
+ document.getElementById("cartCount").innerText=0;
+
+ window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
+}
+
+function showHistory(){
+ let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+ let list="";
+ history.forEach((order,i)=>{
+   list += "<li>Order "+(i+1)+": "+order.join(", ")+"</li>";
+ });
+ document.getElementById("historyItems").innerHTML = list || "No orders yet";
+ document.getElementById("historyModal").style.display="block";
+}
+
+function closeHistory(){
+ document.getElementById("historyModal").style.display="none";
+}
 </body>
 </html>
