@@ -5,8 +5,6 @@
 <title>Dharmendra Pal | Aimil Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#333}
@@ -20,37 +18,26 @@ h2{color:#0f4c75;margin-top:0}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
 .product{border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
 .product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-.product button{margin-top:6px;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;width:100%;font-weight:bold}
-.add{background:#ffc107;color:#000}
+.product button{margin-top:6px;padding:8px;border:none;border-radius:6px;width:100%;font-weight:bold}
+.add{background:#ffc107}
 .buy{background:#198754;color:#fff}
 
 #cartBox{
- position:fixed;
- top:15px;
- right:15px;
- background:#ffc107;
- padding:6px 12px;
- border-radius:20px;
- font-weight:bold;
- z-index:9999;
- cursor:pointer;
+ position:fixed;top:15px;right:15px;
+ background:#ffc107;padding:6px 12px;
+ border-radius:20px;font-weight:bold;
+ cursor:pointer;z-index:9999;
 }
 
-#cartModal{
- display:none;
- position:fixed;
- top:0;left:0;
- width:100%;height:100%;
- background:rgba(0,0,0,.6);
- z-index:9999;
+#cartModal,#historyModal{
+ display:none;position:fixed;
+ top:0;left:0;width:100%;height:100%;
+ background:rgba(0,0,0,.6);z-index:9999;
 }
-#cartContent{
- background:#fff;
- margin:15% auto;
- padding:20px;
- width:90%;
- max-width:400px;
- border-radius:10px;
+.modalBox{
+ background:#fff;margin:15% auto;
+ padding:20px;width:90%;
+ max-width:400px;border-radius:10px;
 }
 
 .footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
@@ -68,7 +55,7 @@ h2{color:#0f4c75;margin-top:0}
 <div id="cartBox" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</div>
 
 <nav class="menu">
-<a href="#bio">Bio Data</a>
+<a href="#bio">Bio</a>
 <a href="#liver">Liver</a>
 <a href="#diabetes">Diabetes</a>
 <a href="#kidney">Kidney</a>
@@ -79,267 +66,71 @@ h2{color:#0f4c75;margin-top:0}
 
 <div class="container">
 
-<!-- BIO -->
 <div class="card" id="bio">
 <h2>Bio Data</h2>
-<p><b>Name:</b> Dharmendra Pal</p>
-<p><b>Village:</b> Kuwakhera</p>
-<p><b>Post:</b> Garrehi</p>
-<p><b>District:</b> Jalaun</p>
-<p><b>State:</b> Uttar Pradesh</p>
-<p><b>Pin Code:</b> 285203</p>
-<p><b>Mobile:</b> 9651719981</p>
+<p>Name: Dharmendra Pal</p>
+<p>Mobile: 9651719981</p>
 </div>
 
-<!-- LIVER -->
 <div class="card" id="liver">
-<h2>Liver Care Products</h2>
+<h2>Liver</h2>
 <div class="products">
-<div class="product"><img src="images/Amlcure-ds.jpg"><h3>Amlcure-DS</h3>
-<button class="add" onclick="addToCart('Amlcure-DS')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Amlcure-DS')">Buy Now</button></div>
-
-<div class="product"><img src="images/Amlcure-.jpg"><h3>Amlcure Forte</h3>
-<button class="add" onclick="addToCart('Amlcure ')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Amlcure ')">Buy Now</button></div>
-
-<div class="product"><img src="images/Yakrit-plihantak.jpg"><h3>Yakrit Plihantak</h3>
-<button class="add" onclick="addToCart('Yakrit Plihantak')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Yakrit Plihantak')">Buy Now</button></div>
+<div class="product"><img src="images/Amlcure-ds.jpg"><h3>Amlcure DS</h3>
+<button class="add" onclick="addToCart('Amlcure DS')">Add</button>
+<button class="buy" onclick="buyNow('Amlcure DS')">Buy</button></div>
 
 <div class="product"><img src="images/Livomyn.jpg"><h3>Livomyn</h3>
-<button class="add" onclick="addToCart('Livomyn')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Livomyn')">Buy Now</button></div>
-
-<div class="product"><img src="images/Livomyn-ds.jpg"><h3>Livomyn DS</h3>
-<button class="add" onclick="addToCart('Livomyn DS')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Livomyn DS')">Buy Now</button></div>
-
-<div class="product"><img src="images/Hepacure.jpg"><h3>Hepacure</h3>
-<button class="add" onclick="addToCart('Hepacure')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Hepacure')">Buy Now</button></div>
-
-<div class="product"><img src="images/Yakrit-sudhar.jpg"><h3>Yakrit Sudhar</h3>
-<button class="add" onclick="addToCart('Yakrit Sudhar')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Yakrit Sudhar')">Buy Now</button></div>
-
-<div class="product"><img src="images/Liver-care-plus.jpg"><h3>Liver Care Plus</h3>
-<button class="add" onclick="addToCart('Liver Care Plus')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Liver Care Plus')">Buy Now</button></div>
+<button class="add" onclick="addToCart('Livomyn')">Add</button>
+<button class="buy" onclick="buyNow('Livomyn')">Buy</button></div>
 </div>
-</div>
-<!-- KIDNEY -->
-<div class="card" id="kidney">
-<h2>Kidney Care Products</h2>
-<div class="products">
-
-<div class="product">
-<img src="images/Neerikft.jpg">
-<h3>Neeri KFT</h3>
-<button class="add" onclick="addToCart('Neeri KFT')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Neeri KFT')">Buy Now</button>
 </div>
 
-<div class="product">
-<img src="images/Neeri.jpg">
-<h3>Neeri Syrup</h3>
-<button class="add" onclick="addToCart('Neeri Syrup')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Neeri Syrup')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Renalka.jpg">
-<h3>Renalka</h3>
-<button class="add" onclick="addToCart('Renalka')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Renalka')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Uricare.jpg">
-<h3>Uricare</h3>
-<button class="add" onclick="addToCart('Uricare')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Uricare')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Kidney-plus.jpg">
-<h3>Kidney Plus</h3>
-<button class="add" onclick="addToCart('Kidney Plus')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Kidney Plus')">Buy Now</button>
-</div>
-
-</div>
-</div>
- <!-- GYNAE -->
-<div class="card" id="gynae">
-<h2>Gynae Care Products</h2>
-<div class="products">
-
-<div class="product">
-<img src="images/Menstronorm.jpg">
-<h3>Menstronorm</h3>
-<button class="add" onclick="addToCart('Menstronorm')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Menstronorm')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Femiplex.jpg">
-<h3>Femiplex</h3>
-<button class="add" onclick="addToCart('Femiplex')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Femiplex')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/PCOS-care.jpg">
-<h3>PCOS Care</h3>
-<button class="add" onclick="addToCart('PCOS Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('PCOS Care')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Garbhpal.jpg">
-<h3>Garbhpal</h3>
-<button class="add" onclick="addToCart('Garbhpal')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Garbhpal')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Utrofit.jpg">
-<h3>Utrofit</h3>
-<button class="add" onclick="addToCart('Utrofit')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Utrofit')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Stree-care.jpg">
-<h3>Stree Care</h3>
-<button class="add" onclick="addToCart('Stree Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Stree Care')">Buy Now</button>
-</div>
-
-</div>
-</div>
- <!-- ORTHO -->
-<div class="card" id="ortho">
-<h2>Ortho Care Products</h2>
-<div class="products">
-
-<div class="product">
-<img src="images/Joint-care.jpg">
-<h3>Joint Care</h3>
-<button class="add" onclick="addToCart('Joint Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Joint Care')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Ortho-plus.jpg">
-<h3>Ortho Plus</h3>
-<button class="add" onclick="addToCart('Ortho Plus')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Ortho Plus')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Pain-relief.jpg">
-<h3>Pain Relief Oil</h3>
-<button class="add" onclick="addToCart('Pain Relief Oil')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Pain Relief Oil')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Rheuma-care.jpg">
-<h3>Rheuma Care</h3>
-<button class="add" onclick="addToCart('Rheuma Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Rheuma Care')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Bone-strength.jpg">
-<h3>Bone Strength</h3>
-<button class="add" onclick="addToCart('Bone Strength')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Bone Strength')">Buy Now</button>
-</div>
-
-<div class="product">
-<img src="images/Flexi-care.jpg">
-<h3>Flexi Care</h3>
-<button class="add" onclick="addToCart('Flexi Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Flexi Care')">Buy Now</button>
-</div>
-
-</div>
-</div>
-<!-- DIABETES -->
 <div class="card" id="diabetes">
-<h2>Diabetes Care Products</h2>
+<h2>Diabetes</h2>
 <div class="products">
 <div class="product"><img src="images/BGR34.jpg"><h3>BGR-34</h3>
-<button class="add" onclick="addToCart('BGR-34')">Add to Cart</button>
-<button class="buy" onclick="buyNow('BGR-34')">Buy Now</button></div>
-
-<div class="product"><img src="images/Diabo-care.jpg"><h3>Diabo Care</h3>
-<button class="add" onclick="addToCart('Diabo Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Diabo Care')">Buy Now</button></div>
-
-<div class="product"><img src="images/Dia-plus.jpg"><h3>Dia Plus</h3>
-<button class="add" onclick="addToCart('Dia Plus')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Dia Plus')">Buy Now</button></div>
-
-<div class="product"><img src="images/Gluco-care.jpg"><h3>Gluco Care</h3>
-<button class="add" onclick="addToCart('Gluco Care')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Gluco Care')">Buy Now</button></div>
-
-<div class="product"><img src="images/Sugar-control.jpg"><h3>Sugar Control</h3>
-<button class="add" onclick="addToCart('Sugar Control')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Sugar Control')">Buy Now</button></div>
-
-<div class="product"><img src="images/Dia-health.jpg"><h3>Dia Health</h3>
-<button class="add" onclick="addToCart('Dia Health')">Add to Cart</button>
-<button class="buy" onclick="buyNow('Dia Health')">Buy Now</button></div>
+<button class="add" onclick="addToCart('BGR-34')">Add</button>
+<button class="buy" onclick="buyNow('BGR-34')">Buy</button></div>
 </div>
 </div>
 
-<!-- baaki Kidney, Gynae, Ortho, General bhi isi pattern me already hain -->
-
 </div>
 
-<div class="footer">© 2026 Dharmendra Pal | Aimil Products</div>
+<div class="footer">© 2026 Dharmendra Pal</div>
 
-<!-- CART POPUP -->
+<!-- CART -->
 <div id="cartModal">
-<div id="cartContent">
+<div class="modalBox">
 <h3>Your Cart</h3>
 <ul id="cartItems"></ul>
-<button class="buy" onclick="checkout()">Checkout / Buy Now</button>
+<button class="buy" onclick="checkout()">Checkout</button>
+<button class="add" onclick="showHistory()">History</button>
 <button class="add" onclick="closeCart()">Close</button>
 </div>
 </div>
-<button class="buy" onclick="checkout()">Checkout / Buy Now</button>
-<button class="add" onclick="showHistory()">Order History</button>
-<button class="add" onclick="closeCart()">Close</button>
-<script>
- <!-- HISTORY POPUP -->
-<div id="historyModal" style="display:none;
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,.6);z-index:9999;">
-<div style="background:#fff;margin:15% auto;padding:20px;
-width:90%;max-width:400px;border-radius:10px;">
+
+<!-- HISTORY -->
+<div id="historyModal">
+<div class="modalBox">
 <h3>Order History</h3>
 <ul id="historyItems"></ul>
 <button class="add" onclick="closeHistory()">Close</button>
 </div>
 </div>
-let cart = [];
 
-function addToCart(product){
- cart.push(product);
- document.getElementById("cartCount").innerText = cart.length;
- alert(product+" added to cart");
+<script>
+let cart=[];
+
+function addToCart(p){
+ cart.push(p);
+ document.getElementById("cartCount").innerText=cart.length;
+ alert(p+" added");
 }
 
 function openCart(){
  let list="";
- cart.forEach((item,i)=>{
-   list += "<li>"+(i+1)+". "+item+"</li>";
+ cart.forEach((p,i)=>{
+  list+="<li>"+(i+1)+". "+p+"</li>";
  });
  document.getElementById("cartItems").innerHTML=list;
  document.getElementById("cartModal").style.display="block";
@@ -349,52 +140,38 @@ function closeCart(){
  document.getElementById("cartModal").style.display="none";
 }
 
-function buyNow(product){
- cart=[product];
+function buyNow(p){
+ cart=[p];
  checkout();
 }
 
 function checkout(){
- let msg="Hello Doctor, I want to order:\n";
- cart.forEach((p,i)=>{
-   msg += (i+1)+". "+p+"\n";
- });
- window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
-}
-</script>
-function checkout(){
- if(cart.length==0){
-   alert("Cart is empty");
-   return;
- }
-
- // save history
- let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+ if(cart.length==0){alert("Empty");return;}
+ let history=JSON.parse(localStorage.getItem("orderHistory"))||[];
  history.push([...cart]);
- localStorage.setItem("orderHistory", JSON.stringify(history));
+ localStorage.setItem("orderHistory",JSON.stringify(history));
 
- let msg="Hello Doctor, I want to order:\n";
- cart.forEach((p,i)=>{
-   msg += (i+1)+". "+p+"\n";
- });
- cart=[]; 
+ let msg="Order:\n";
+ cart.forEach((p,i)=>{msg+=(i+1)+". "+p+"\n";});
+ cart=[];
  document.getElementById("cartCount").innerText=0;
-
  window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
 }
 
 function showHistory(){
- let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+ let history=JSON.parse(localStorage.getItem("orderHistory"))||[];
  let list="";
- history.forEach((order,i)=>{
-   list += "<li>Order "+(i+1)+": "+order.join(", ")+"</li>";
+ history.forEach((o,i)=>{
+  list+="<li>Order "+(i+1)+": "+o.join(", ")+"</li>";
  });
- document.getElementById("historyItems").innerHTML = list || "No orders yet";
+ document.getElementById("historyItems").innerHTML=list||"No orders";
  document.getElementById("historyModal").style.display="block";
 }
 
 function closeHistory(){
  document.getElementById("historyModal").style.display="none";
 }
+</script>
+
 </body>
 </html>
