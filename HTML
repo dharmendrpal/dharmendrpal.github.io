@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dharmendra | Medical Representative</title>
+<title>Dharmendra Pal | Medical Representative</title>
 
 <style>
 body{
@@ -19,18 +19,20 @@ header{
   position:relative;
 }
 #cartBox{
-  position:absolute;
-  top:20px;
-  right:20px;
+  position:fixed;
+  top:15px;
+  right:15px;
   background:#ffc107;
   color:#000;
-  padding:6px 14px;
+  padding:8px 14px;
   border-radius:20px;
   font-weight:bold;
+  cursor:pointer;
+  z-index:9999;
 }
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:15px;
   padding:20px;
 }
@@ -39,45 +41,34 @@ header{
   border-radius:10px;
   padding:15px;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
 }
 .card img{
   width:100%;
-  height:150px;
+  height:120px;
   object-fit:contain;
 }
 .card h3{
   margin:10px 0 5px;
 }
 .card p{
-  font-size:14px;
+  font-size:13px;
   color:#555;
 }
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 12px;
-  background:#198754;
-  color:#fff;
-  text-decoration:none;
-  border-radius:5px;
-}
-.cart-btn{
-  margin-top:8px;
-  padding:8px 12px;
-  background:#ffc107;
+.btn{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
   border:none;
-  color:#000;
   border-radius:5px;
   cursor:pointer;
   font-weight:bold;
-  width:100%;
 }
-.cart-btn:hover{
-  background:#ffca2c;
+.add{
+  background:#ffc107;
+}
+.buy{
+  background:#198754;
+  color:#fff;
 }
 footer{
   background:#222;
@@ -87,29 +78,22 @@ footer{
   text-align:center;
 }
 
-/* Floating buttons */
-.whatsapp, .call{
+/* Cart Modal */
+#cartModal{
+  display:none;
   position:fixed;
-  bottom:20px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  color:#fff;
-  font-size:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
-  z-index:999;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
 }
-.whatsapp{
-  right:20px;
-  background:#25D366;
-}
-.call{
-  right:80px;
-  background:#0b5ed7;
+#cartContent{
+  background:#fff;
+  margin:15% auto;
+  padding:20px;
+  width:90%;
+  max-width:400px;
+  border-radius:10px;
 }
 </style>
 </head>
@@ -117,70 +101,63 @@ footer{
 <body>
 
 <header>
-  <h1>Dharmendra Kumar</h1>
-  <p>Medical Representative | Aimil Pharmaceutical</p>
-  <div id="cartBox">
-    🛒 Cart: <span id="cartCount">0</span>
-  </div>
+  <h1>Dharmendra Pal</h1>
+  <p>Medical Representative | Aimil Products</p>
 </header>
+
+<div id="cartBox" onclick="openCart()">
+  🛒 Cart (<span id="cartCount">0</span>)
+</div>
 
 <section class="products">
 
   <div class="card">
     <img src="product1.png">
-    <h3>AmliCure DS</h3>
-    <p>Liver support & digestion</p>
-    <a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view" target="_blank">
-      View Visual Aid
-    </a>
-    <button class="cart-btn" onclick="addToCart('AmliCure DS')">
-      Add to Cart
-    </button>
+    <h3>Amlcure-DS</h3>
+    <p>Liver support</p>
+    <button class="btn add" onclick="addToCart('Amlcure-DS')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Amlcure-DS')">Buy Now</button>
   </div>
 
   <div class="card">
     <img src="product2.png">
-    <h3>Neeri Syrup</h3>
-    <p>Kidney & urinary support</p>
-    <a href="#" target="_blank">View Visual Aid</a>
-    <button class="cart-btn" onclick="addToCart('Neeri Syrup')">
-      Add to Cart
-    </button>
+    <h3>Yakrit Sudhar</h3>
+    <p>Liver detox</p>
+    <button class="btn add" onclick="addToCart('Yakrit Sudhar')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Yakrit Sudhar')">Buy Now</button>
   </div>
 
   <div class="card">
     <img src="product3.png">
+    <h3>Livomyn DS</h3>
+    <p>Digestion tonic</p>
+    <button class="btn add" onclick="addToCart('Livomyn DS')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Livomyn DS')">Buy Now</button>
+  </div>
+
+  <div class="card">
+    <img src="product4.png">
     <h3>BGR-34</h3>
-    <p>Diabetes management</p>
-    <a href="#" target="_blank">View Visual Aid</a>
-    <button class="cart-btn" onclick="addToCart('BGR-34')">
-      Add to Cart
-    </button>
+    <p>Diabetes care</p>
+    <button class="btn add" onclick="addToCart('BGR-34')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('BGR-34')">Buy Now</button>
   </div>
 
 </section>
 
-<div style="text-align:center; padding:20px">
-  <a href="#" target="_blank"
-     style="padding:12px 20px;
-     background:#dc3545;
-     color:#fff;
-     text-decoration:none;
-     border-radius:6px;">
-     Download Full Product Catalogue
-  </a>
-</div>
-
 <footer>
-  <p>
-    This website is for information purpose only.  
-    Products are to be used as prescribed by registered medical practitioners.
-  </p>
+  This website is for information purpose only.
 </footer>
 
-<!-- Floating Buttons -->
-<a href="https://wa.me/919651719981" class="whatsapp">💬</a>
-<a href="tel:+919651719981" class="call">📞</a>
+<!-- CART POPUP -->
+<div id="cartModal">
+  <div id="cartContent">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <button class="btn buy" onclick="checkout()">Checkout / Buy Now</button>
+    <button class="btn add" onclick="closeCart()">Close</button>
+  </div>
+</div>
 
 <script>
 let cart = [];
@@ -189,6 +166,36 @@ function addToCart(product){
   cart.push(product);
   document.getElementById("cartCount").innerText = cart.length;
   alert(product + " added to cart");
+}
+
+function openCart(){
+  let list = "";
+  cart.forEach((item, i)=>{
+    list += "<li>"+(i+1)+". "+item+"</li>";
+  });
+  document.getElementById("cartItems").innerHTML = list;
+  document.getElementById("cartModal").style.display="block";
+}
+
+function closeCart(){
+  document.getElementById("cartModal").style.display="none";
+}
+
+function buyNow(product){
+  cart = [product];
+  checkout();
+}
+
+function checkout(){
+  if(cart.length==0){
+    alert("Cart is empty");
+    return;
+  }
+  let msg = "Hello, I want to order:\n";
+  cart.forEach((p,i)=>{
+    msg += (i+1)+". "+p+"\n";
+  });
+  window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
 }
 </script>
 
