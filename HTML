@@ -16,6 +16,17 @@ header{
   color:#fff;
   padding:20px;
   text-align:center;
+  position:relative;
+}
+#cartBox{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:#ffc107;
+  color:#000;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:bold;
 }
 .products{
   display:grid;
@@ -54,8 +65,19 @@ header{
   text-decoration:none;
   border-radius:5px;
 }
-.card a:hover{
-  background:#157347;
+.cart-btn{
+  margin-top:8px;
+  padding:8px 12px;
+  background:#ffc107;
+  border:none;
+  color:#000;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+  width:100%;
+}
+.cart-btn:hover{
+  background:#ffca2c;
 }
 footer{
   background:#222;
@@ -64,54 +86,8 @@ footer{
   font-size:13px;
   text-align:center;
 }
-</style>
-</head>
 
-<body>
-
-<header>
-  <h1>Dharmendra Kumar</h1>
-  <p>Medical Representative | Aimil Pharmaceutical</p>
-</header>
-
-<section class="products">
-
-  <div class="card">
-    <img src="product1.png">
-    <h3>Product Name 1</h3>
-    <p>Liver support & digestion</p>
-    <a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view?usp=drivesdk" target="_blank">View Visual Aid</a>
-  </div>
-
-  <div class="card">
-    <img src="product2.png">
-    <h3>Product Name 2</h3>
-    <p>Joint & pain management</p>
-    <a href="PASTE_PDF_LINK_HERE" target="_blank">View Visual Aid</a>
-  </div>
-
-  <div class="card">
-    <img src="product3.png">
-    <h3>Product Name 3</h3>
-    <p>Women's health support</p>
-    <a href="PASTE_PDF_LINK_HERE" target="_blank">View Visual Aid</a>
-  </div>
-
-</section>
-
-<footer>
-  <p>
-    This website is for information purpose only.  
-    Products are to be used as prescribed by registered medical practitioners.
-  </p>
-</footer>
-
-</body>
-</html>
-<a href="https://wa.me/919651719981" class="whatsapp">💬</a>
-<a href="tel:+919651719981" class="call">📞</a>
-
-<style>
+/* Floating buttons */
 .whatsapp, .call{
   position:fixed;
   bottom:20px;
@@ -125,6 +101,7 @@ footer{
   justify-content:center;
   text-decoration:none;
   box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  z-index:999;
 }
 .whatsapp{
   right:20px;
@@ -134,8 +111,57 @@ footer{
   right:80px;
   background:#0b5ed7;
 }
-</style><div style="text-align:center; padding:20px">
-  <a href="PDF_LINK" target="_blank"
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dharmendra Kumar</h1>
+  <p>Medical Representative | Aimil Pharmaceutical</p>
+  <div id="cartBox">
+    🛒 Cart: <span id="cartCount">0</span>
+  </div>
+</header>
+
+<section class="products">
+
+  <div class="card">
+    <img src="product1.png">
+    <h3>AmliCure DS</h3>
+    <p>Liver support & digestion</p>
+    <a href="https://drive.google.com/file/d/1U-zQaZq-3G1SIbYaTTDT314cMuL8RgjO/view" target="_blank">
+      View Visual Aid
+    </a>
+    <button class="cart-btn" onclick="addToCart('AmliCure DS')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="product2.png">
+    <h3>Neeri Syrup</h3>
+    <p>Kidney & urinary support</p>
+    <a href="#" target="_blank">View Visual Aid</a>
+    <button class="cart-btn" onclick="addToCart('Neeri Syrup')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="product3.png">
+    <h3>BGR-34</h3>
+    <p>Diabetes management</p>
+    <a href="#" target="_blank">View Visual Aid</a>
+    <button class="cart-btn" onclick="addToCart('BGR-34')">
+      Add to Cart
+    </button>
+  </div>
+
+</section>
+
+<div style="text-align:center; padding:20px">
+  <a href="#" target="_blank"
      style="padding:12px 20px;
      background:#dc3545;
      color:#fff;
@@ -144,3 +170,27 @@ footer{
      Download Full Product Catalogue
   </a>
 </div>
+
+<footer>
+  <p>
+    This website is for information purpose only.  
+    Products are to be used as prescribed by registered medical practitioners.
+  </p>
+</footer>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/919651719981" class="whatsapp">💬</a>
+<a href="tel:+919651719981" class="call">📞</a>
+
+<script>
+let cart = [];
+
+function addToCart(product){
+  cart.push(product);
+  document.getElementById("cartCount").innerText = cart.length;
+  alert(product + " added to cart");
+}
+</script>
+
+</body>
+</html>
