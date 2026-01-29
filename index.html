@@ -2,149 +2,200 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dharmendra Pal | Aimil Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Dharmendra Pal | Medical Representative</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f5f9;color:#333}
-.header{background:linear-gradient(135deg,#0f4c75,#3282b8);color:#fff;text-align:center;padding:45px 20px}
-.profile-pic{width:120px;height:120px;border-radius:50%;border:4px solid #fff;object-fit:cover}
-.menu{position:sticky;top:0;background:#0f4c75;display:flex;justify-content:center;gap:20px;padding:10px;flex-wrap:wrap}
-.menu a{color:#fff;font-weight:600}
-.container{max-width:1100px;margin:20px auto;padding:0 15px}
-.card{background:#fff;padding:20px;border-radius:12px;margin-bottom:25px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
-h2{color:#0f4c75;margin-top:0}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.product{border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
-.product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-.product button{margin-top:8px;padding:8px 12px;border:none;border-radius:6px;background:#0f4c75;color:#fff;cursor:pointer}
-.footer{background:#0f4c75;color:#fff;text-align:center;padding:15px}
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f4f6f8;
+}
+header{
+  background:#0b5ed7;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  position:relative;
+}
+#cartBox{
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:#ffc107;
+  color:#000;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:9999;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.card img{
+  width:100%;
+  height:120px;
+  object-fit:contain;
+}
+.card h3{
+  margin:10px 0 5px;
+}
+.card p{
+  font-size:13px;
+  color:#555;
+}
+.btn{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.add{
+  background:#ffc107;
+}
+.buy{
+  background:#198754;
+  color:#fff;
+}
+footer{
+  background:#222;
+  color:#ccc;
+  padding:15px;
+  font-size:13px;
+  text-align:center;
+}
+
+/* Cart Modal */
+#cartModal{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+}
+#cartContent{
+  background:#fff;
+  margin:15% auto;
+  padding:20px;
+  width:90%;
+  max-width:400px;
+  border-radius:10px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<img src="photo.jpg" class="profile-pic">
-<h1>Dharmendra Pal</h1>
-<p>Medical Representative • Aimil Products</p>
+<header>
+  <h1>Dharmendra Pal</h1>
+  <p>Medical Representative | Aimil Products</p>
+</header>
+
+<div id="cartBox" onclick="openCart()">
+  🛒 Cart (<span id="cartCount">0</span>)
 </div>
 
-<nav class="menu">
-<a href="#bio">Bio Data</a>
-<a href="#liver">Liver</a>
-<a href="#diabetes">Diabetes</a>
-<a href="#kidney">Kidney</a>
-<a href="#gynae">Gynae</a>
-<a href="#ortho">Ortho</a>
-<a href="#general">General</a>
-</nav>
+<section class="products">
 
-<div class="container">
+  <div class="card">
+    <img src="product1.png">
+    <h3>Amlcure-DS</h3>
+    <p>Liver support</p>
+    <button class="btn add" onclick="addToCart('Amlcure-DS')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Amlcure-DS')">Buy Now</button>
+  </div>
 
-<!-- BIO DATA -->
-<div class="card" id="bio">
-<h2>Bio Data</h2>
-<p><b>Name:</b> Dharmendra Pal</p>
-<p><b>Village:</b> Kuwakhera</p>
-<p><b>Post:</b> Garrehi</p>
-<p><b>District:</b> Jalaun</p>
-<p><b>State:</b> Uttar Pradesh</p>
-<p><b>Pin Code:</b> 285203</p>
-<p><b>Mobile:</b> 9651719981</p>
-</div>
+  <div class="card">
+    <img src="product2.png">
+    <h3>Yakrit Sudhar</h3>
+    <p>Liver detox</p>
+    <button class="btn add" onclick="addToCart('Yakrit Sudhar')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Yakrit Sudhar')">Buy Now</button>
+  </div>
 
-<!-- LIVER (8) -->
-<div class="card" id="liver">
-<h2>Liver Care Products</h2>
-<div class="products">
-<div class="product"><img src="images/Amlcure-ds.jpg"><h3>Amlcure-DS</h3><button onclick="order('Amlcure-DS')">WhatsApp</button></div>
-<div class="product"><img src="images/Amlcure-forte.jpg"><h3>Amlcure Forte</h3><button onclick="order('Amlcure Forte')">WhatsApp</button></div>
-<div class="product"><img src="images/Yakrit-plihantak.jpg"><h3>Yakrit Plihantak</h3><button onclick="order('Yakrit Plihantak')">WhatsApp</button></div>
-<div class="product"><img src="images/Livomyn.jpg"><h3>Livomyn</h3><button onclick="order('Livomyn')">WhatsApp</button></div>
-<div class="product"><img src="images/Livomyn-ds.jpg"><h3>Livomyn DS</h3><button onclick="order('Livomyn DS')">WhatsApp</button></div>
-<div class="product"><img src="images/Hepacure.jpg"><h3>Hepacure</h3><button onclick="order('Hepacure')">WhatsApp</button></div>
-<div class="product"><img src="images/Yakrit-sudhar.jpg"><h3>Yakrit Sudhar</h3><button onclick="order('Yakrit Sudhar')">WhatsApp</button></div>
-<div class="product"><img src="images/Liver-care-plus.jpg"><h3>Liver Care Plus</h3><button onclick="order('Liver Care Plus')">WhatsApp</button></div>
-</div>
-</div>
+  <div class="card">
+    <img src="product3.png">
+    <h3>Livomyn DS</h3>
+    <p>Digestion tonic</p>
+    <button class="btn add" onclick="addToCart('Livomyn DS')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('Livomyn DS')">Buy Now</button>
+  </div>
 
-<!-- DIABETES (6) -->
-<div class="card" id="diabetes">
-<h2>Diabetes Care Products</h2>
-<div class="products">
-<div class="product"><img src="images/BGR34.jpg"><h3>BGR-34</h3><button onclick="order('BGR-34')">WhatsApp</button></div>
-<div class="product"><img src="images/Diabo-care.jpg"><h3>Diabo Care</h3><button onclick="order('Diabo Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Dia-plus.jpg"><h3>Dia Plus</h3><button onclick="order('Dia Plus')">WhatsApp</button></div>
-<div class="product"><img src="images/Gluco-care.jpg"><h3>Gluco Care</h3><button onclick="order('Gluco Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Sugar-control.jpg"><h3>Sugar Control</h3><button onclick="order('Sugar Control')">WhatsApp</button></div>
-<div class="product"><img src="images/Dia-health.jpg"><h3>Dia Health</h3><button onclick="order('Dia Health')">WhatsApp</button></div>
-</div>
-</div>
+  <div class="card">
+    <img src="product4.png">
+    <h3>BGR-34</h3>
+    <p>Diabetes care</p>
+    <button class="btn add" onclick="addToCart('BGR-34')">Add to Cart</button>
+    <button class="btn buy" onclick="buyNow('BGR-34')">Buy Now</button>
+  </div>
 
-<!-- KIDNEY (5) -->
-<div class="card" id="kidney">
-<h2>Kidney Care Products</h2>
-<div class="products">
-<div class="product"><img src="images/Neerikft.jpg"><h3>Neeri KFT</h3><button onclick="order('Neeri KFT')">WhatsApp</button></div>
-<div class="product"><img src="images/Neeri.jpg"><h3>Neeri Syrup</h3><button onclick="order('Neeri Syrup')">WhatsApp</button></div>
-<div class="product"><img src="images/Renalka.jpg"><h3>Renalka</h3><button onclick="order('Renalka')">WhatsApp</button></div>
-<div class="product"><img src="images/Uricare.jpg"><h3>Uricare</h3><button onclick="order('Uricare')">WhatsApp</button></div>
-<div class="product"><img src="images/Kidney-plus.jpg"><h3>Kidney Plus</h3><button onclick="order('Kidney Plus')">WhatsApp</button></div>
-</div>
-</div>
+</section>
 
-<!-- GYNAE (6) -->
-<div class="card" id="gynae">
-<h2>Gynae Care Products</h2>
-<div class="products">
-<div class="product"><img src="images/Menstronorm.jpg"><h3>Menstronorm</h3><button onclick="order('Menstronorm')">WhatsApp</button></div>
-<div class="product"><img src="images/Femiplex.jpg"><h3>Femiplex</h3><button onclick="order('Femiplex')">WhatsApp</button></div>
-<div class="product"><img src="images/PCOS-care.jpg"><h3>PCOS Care</h3><button onclick="order('PCOS Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Garbhpal.jpg"><h3>Garbhpal</h3><button onclick="order('Garbhpal')">WhatsApp</button></div>
-<div class="product"><img src="images/Utrofit.jpg"><h3>Utrofit</h3><button onclick="order('Utrofit')">WhatsApp</button></div>
-<div class="product"><img src="images/Stree-care.jpg"><h3>Stree Care</h3><button onclick="order('Stree Care')">WhatsApp</button></div>
-</div>
-</div>
+<footer>
+  This website is for information purpose only.
+</footer>
 
-<!-- ORTHO (6) -->
-<div class="card" id="ortho">
-<h2>Ortho Care Products</h2>
-<div class="products">
-<div class="product"><img src="images/Joint-care.jpg"><h3>Joint Care</h3><button onclick="order('Joint Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Ortho-plus.jpg"><h3>Ortho Plus</h3><button onclick="order('Ortho Plus')">WhatsApp</button></div>
-<div class="product"><img src="images/Pain-relief.jpg"><h3>Pain Relief Oil</h3><button onclick="order('Pain Relief Oil')">WhatsApp</button></div>
-<div class="product"><img src="images/Rheuma-care.jpg"><h3>Rheuma Care</h3><button onclick="order('Rheuma Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Bone-strength.jpg"><h3>Bone Strength</h3><button onclick="order('Bone Strength')">WhatsApp</button></div>
-<div class="product"><img src="images/Flexi-care.jpg"><h3>Flexi Care</h3><button onclick="order('Flexi Care')">WhatsApp</button></div>
+<!-- CART POPUP -->
+<div id="cartModal">
+  <div id="cartContent">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <button class="btn buy" onclick="checkout()">Checkout / Buy Now</button>
+    <button class="btn add" onclick="closeCart()">Close</button>
+  </div>
 </div>
-</div>
-
-<!-- GENERAL (8) -->
-<div class="card" id="general">
-<h2>General Wellness Products</h2>
-<div class="products">
-<div class="product"><img src="images/Immunity-booster.jpg"><h3>Immunity Booster</h3><button onclick="order('Immunity Booster')">WhatsApp</button></div>
-<div class="product"><img src="images/Digestive-care.jpg"><h3>Digestive Care</h3><button onclick="order('Digestive Care')">WhatsApp</button></div>
-<div class="product"><img src="images/Energy-plus.jpg"><h3>Energy Plus</h3><button onclick="order('Energy Plus')">WhatsApp</button></div>
-<div class="product"><img src="images/Stress-relief.jpg"><h3>Stress Relief</h3><button onclick="order('Stress Relief')">WhatsApp</button></div>
-<div class="product"><img src="images/Vital-health.jpg"><h3>Vital Health</h3><button onclick="order('Vital Health')">WhatsApp</button></div>
-<div class="product"><img src="images/Ayur-tonic.jpg"><h3>Ayur Tonic</h3><button onclick="order('Ayur Tonic')">WhatsApp</button></div>
-<div class="product"><img src="images/Health-plus.jpg"><h3>Health Plus</h3><button onclick="order('Health Plus')">WhatsApp</button></div>
-<div class="product"><img src="images/Daily-wellness.jpg"><h3>Daily Wellness</h3><button onclick="order('Daily Wellness')">WhatsApp</button></div>
-</div>
-</div>
-
-</div>
-
-<div class="footer">© 2026 Dharmendra Pal | Aimil Products</div>
 
 <script>
-function order(p){
-window.open("https://wa.me/919651719981?text=I%20want%20details%20about%20"+p);
+let cart = [];
+
+function addToCart(product){
+  cart.push(product);
+  document.getElementById("cartCount").innerText = cart.length;
+  alert(product + " added to cart");
+}
+
+function openCart(){
+  let list = "";
+  cart.forEach((item, i)=>{
+    list += "<li>"+(i+1)+". "+item+"</li>";
+  });
+  document.getElementById("cartItems").innerHTML = list;
+  document.getElementById("cartModal").style.display="block";
+}
+
+function closeCart(){
+  document.getElementById("cartModal").style.display="none";
+}
+
+function buyNow(product){
+  cart = [product];
+  checkout();
+}
+
+function checkout(){
+  if(cart.length==0){
+    alert("Cart is empty");
+    return;
+  }
+  let msg = "Hello, I want to order:\n";
+  cart.forEach((p,i)=>{
+    msg += (i+1)+". "+p+"\n";
+  });
+  window.open("https://wa.me/919651719981?text="+encodeURIComponent(msg));
 }
 </script>
 
